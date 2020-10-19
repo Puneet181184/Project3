@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+   <title>Music site</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+   <!--<link rel="stylesheet" href="{% static "/css/mystyle.css" %}"/>-->
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "music_app:home" %}>Home</a></li>
+<li> <a class="navbar-link" href={% url "music_app:track" %}>Track</a></li>
+<li> <a class="navbar-link" href={% url "music_app:artist" %}>Artist</a></li>
+<li> <a class="navbar-link" href={% url "music_app:ascap" %}>Ascap</a></li>
+<li> <a class="navbar-link" href={% url "music_app:bmi" %}>Bmi</a></li>
+<li> <a class="navbar-link" href={% url "music_app:codes" %}>Codes</a></li>
+<li> <a class="navbar-link"	href={% url "music_app:gmr" %}>Gmr</a></li>
+<li> <a class="navbar-link"	href={% url "music_app:sesac" %}>Sesac</a></li>
+</ul>
+</div>
+</nav>	
+ <div class="container">
+   {% block body_block %}
+   {% endblock %}
+   </div>
+</body>
+</html>	

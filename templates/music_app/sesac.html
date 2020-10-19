@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "music_app/base.html" %}
+{% block body_block %}
+<h1>This is the sesac page</h1>
+{% if music %}
+<ol>
+{% for track in music %}
+<li>SESACinfo</li>
+<ul>
+<li> SESAC ID:{{ track.sesac_id }}</li>
+<li> SESAC PUBLISHER:{{ track.sesac_pub }}</li>
+</ul>
+{% endfor %}
+</ol>
+{% endif %} 
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "music_app:form_sesac" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:search_sesac" %}>Search an entry</a></li>
+</ul>
+</div>
+</nav> 		
+{% endblock %}
