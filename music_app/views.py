@@ -48,7 +48,7 @@ def form_music(request):
       form=newuserform(request.POST)
       if form.is_valid():
          form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/form.html",{"form":form}) 
@@ -59,7 +59,7 @@ def form_track(request):
       form=trackform(request.POST)
       if form.is_valid():
          form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/form_track.html",{"form":form})   
@@ -69,8 +69,22 @@ def form_artist(request):
     if request.method=="POST":
       form=artistform(request.POST)
       if form.is_valid():
-         form.save(commit=True)
-         return index(request)
+      	#t=music_db.objects.get_or_create(title=title,artist=artist,album=album,writer=writer,othername=othername,isni=isni,ipi=ipi,
+		#isrc=isrc,sesac_id=sesac_id,sesac_pub=sesac_pub,ascap_id=ascap_id,ascap_pub=ascap_pub,ascap_ipi=ascap_ipi,
+		#bmi_id=bmi_id,bmi_pub=bmi_pub,gmr_id=gmr_id,gmr_pub=gmr_pub,gmr_ipi=gmr_ipi)[0]
+	#t.save()
+         title=form.cleaned_data["title"]
+         artist=form.cleaned_data["artist"]
+         writer=form.cleaned_data["writer"]
+         othername=form.cleaned_data["othername"]
+         defaults={"artist":artist,"writer":writer,"othername":othername}
+         obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
+
+
+
+
+         #form.save(commit=True)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/form_artist.html",{"form":form})   
@@ -81,7 +95,7 @@ def form_codes(request):
       form=codesform(request.POST)
       if form.is_valid():
          form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/form_codes.html",{"form":form})
@@ -92,7 +106,7 @@ def form_sesac(request):
       form=sesacform(request.POST)
       if form.is_valid():
          form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/form_sesac.html",{"form":form})
@@ -103,7 +117,7 @@ def form_ascap(request):
       form=ascapform(request.POST)
       if form.is_valid():
          form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/form_ascap.html",{"form":form})
@@ -114,7 +128,7 @@ def form_bmi(request):
       form=bmiform(request.POST)
       if form.is_valid():
          form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/form_bmi.html",{"form":form})
@@ -125,7 +139,7 @@ def form_gmr(request):
       form=gmrform(request.POST)
       if form.is_valid():
          form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/form_gmr.html",{"form":form})
@@ -136,7 +150,7 @@ def search_track(request):
       form=searchform(request.POST)
       if form.is_valid():
          #form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/search_track.html",{"form":form})
@@ -147,7 +161,7 @@ def search_artist(request):
       form=searchform(request.POST)
       if form.is_valid():
          #form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/search_artist.html",{"form":form})
@@ -159,7 +173,7 @@ def search_ascap(request):
       form=searchform(request.POST)
       if form.is_valid():
          #form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/search_ascap.html",{"form":form})
@@ -170,7 +184,7 @@ def search_bmi(request):
       form=searchform(request.POST)
       if form.is_valid():
          #form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/search_bmi.html",{"form":form})
@@ -181,7 +195,7 @@ def search_codes(request):
       form=searchform(request.POST)
       if form.is_valid():
          #form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/search_codes.html",{"form":form})
@@ -193,7 +207,7 @@ def search_gmr(request):
       form=searchform(request.POST)
       if form.is_valid():
          #form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/search_gmr.html",{"form":form})
@@ -205,7 +219,7 @@ def search_sesac(request):
       form=searchform(request.POST)
       if form.is_valid():
          #form.save(commit=True)
-         return index(request)
+         return home(request)
       else:
          print("error form invalid")      
     return render(request,"music_app/search_sesac.html",{"form":form})
