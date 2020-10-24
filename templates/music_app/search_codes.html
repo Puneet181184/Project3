@@ -2,13 +2,6 @@
 {% extends "music_app/base.html" %}
 {% block body_block %}
 <h1>This is the search codes page</h1>
-<div class="container">
-<form method="POST">
-{{ form.as_p }}
-{% csrf_token %}
-<input type="submit" class="btn btn-primary" value="submit">	
-</form>
-</div>
 <nav class="navbar navbar-default navbar-static-top">
 <div class="container">
 <ul class="nav navbar-nav">
@@ -17,4 +10,11 @@
 </ul>
 </div>
 </nav> 	
+<div class="container">
+<form method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<input type="submit" class="btn btn-primary" value="submit">	
+</form>
+</div>
 {% endblock %}
