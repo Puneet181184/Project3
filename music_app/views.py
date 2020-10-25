@@ -58,7 +58,10 @@ def form_track(request):
     if request.method=="POST":
       form=trackform(request.POST)
       if form.is_valid():
-         form.save(commit=True)
+         title=form.cleaned_data["title"]
+         album=form.cleaned_data["album"]
+         defaults={"album":album}
+         obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
          return home(request)
       else:
          print("error form invalid")      
@@ -69,21 +72,12 @@ def form_artist(request):
     if request.method=="POST":
       form=artistform(request.POST)
       if form.is_valid():
-      	#t=music_db.objects.get_or_create(title=title,artist=artist,album=album,writer=writer,othername=othername,isni=isni,ipi=ipi,
-		#isrc=isrc,sesac_id=sesac_id,sesac_pub=sesac_pub,ascap_id=ascap_id,ascap_pub=ascap_pub,ascap_ipi=ascap_ipi,
-		#bmi_id=bmi_id,bmi_pub=bmi_pub,gmr_id=gmr_id,gmr_pub=gmr_pub,gmr_ipi=gmr_ipi)[0]
-	#t.save()
          title=form.cleaned_data["title"]
          artist=form.cleaned_data["artist"]
          writer=form.cleaned_data["writer"]
          othername=form.cleaned_data["othername"]
          defaults={"artist":artist,"writer":writer,"othername":othername}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
-
-
-
-
-         #form.save(commit=True)
          return home(request)
       else:
          print("error form invalid")      
@@ -94,7 +88,12 @@ def form_codes(request):
     if request.method=="POST":
       form=codesform(request.POST)
       if form.is_valid():
-         form.save(commit=True)
+         title=form.cleaned_data["title"]
+         isni=form.cleaned_data["isni"]
+         ipi=form.cleaned_data["ipi"]
+         isrc=form.cleaned_data["isrc"]
+         defaults={"isni":isni,"ipi":ipi,"isrc":isrc}
+         obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
          return home(request)
       else:
          print("error form invalid")      
@@ -105,7 +104,11 @@ def form_sesac(request):
     if request.method=="POST":
       form=sesacform(request.POST)
       if form.is_valid():
-         form.save(commit=True)
+         title=form.cleaned_data["title"]
+         sesac_id=form.cleaned_data["sesac_id"]
+         sesac_pub=form.cleaned_data["sesac_pub"]
+         defaults={"sesac_id":sesac_id,"sesac_pub":sesac_pub}
+         obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)        
          return home(request)
       else:
          print("error form invalid")      
@@ -116,7 +119,12 @@ def form_ascap(request):
     if request.method=="POST":
       form=ascapform(request.POST)
       if form.is_valid():
-         form.save(commit=True)
+         title=form.cleaned_data["title"]
+         ascap_id=form.cleaned_data["ascap_id"]
+         ascap_pub=form.cleaned_data["ascap_pub"]
+         ascap_ipi=form.cleaned_data["ascap_ipi"]
+         defaults={"ascap_id":ascap_id,"ascap_pub":ascap_pub,"ascap_ipi":ascap_ipi}
+         obj,created=music_db.objects.update_or_create(title=title,defaults=defaults) 
          return home(request)
       else:
          print("error form invalid")      
@@ -127,7 +135,11 @@ def form_bmi(request):
     if request.method=="POST":
       form=bmiform(request.POST)
       if form.is_valid():
-         form.save(commit=True)
+         title=form.cleaned_data["title"]
+         bmi_id=form.cleaned_data["bmi_id"]
+         bmi_pub=form.cleaned_data["bmi_pub"]
+         defaults={"bmi_id":bmi_id,"bmi_pub":bmi_pub}
+         obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
          return home(request)
       else:
          print("error form invalid")      
@@ -138,7 +150,12 @@ def form_gmr(request):
     if request.method=="POST":
       form=gmrform(request.POST)
       if form.is_valid():
-         form.save(commit=True)
+         title=form.cleaned_data["title"]
+         gmr_id=form.cleaned_data["gmr_id"]
+         gmr_pub=form.cleaned_data["gmr_pub"]
+         gmr_ipi=form.cleaned_data["gmr_ipi"]
+         defaults={"gmr_id":gmr_id,"gmr_pub":gmr_pub,"gmr_ipi":gmr_ipi}
+         obj,created=music_db.objects.update_or_create(title=title,defaults=defaults) 
          return home(request)
       else:
          print("error form invalid")      
