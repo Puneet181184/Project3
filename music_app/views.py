@@ -10,6 +10,7 @@ from music_app.forms import ascapform
 from music_app.forms import bmiform
 from music_app.forms import gmrform
 from music_app.forms import searchform
+from django.shortcuts import get_object_or_404
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -166,8 +167,9 @@ def search_track(request):
     if request.method=="POST":
       form=searchform(request.POST)
       if form.is_valid():
-         #form.save(commit=True)
-         return home(request)
+         title=form.cleaned_data["title"]
+         my_value=get_object_or_404(music_db,title=title)
+         return render(request,"music_app/result_track.html",context={"music":my_value})
       else:
          print("error form invalid")      
     return render(request,"music_app/search_track.html",{"form":form})
@@ -177,8 +179,9 @@ def search_artist(request):
     if request.method=="POST":
       form=searchform(request.POST)
       if form.is_valid():
-         #form.save(commit=True)
-         return home(request)
+         title=form.cleaned_data["title"]
+         my_value=get_object_or_404(music_db,title=title)
+         return render(request,"music_app/result_artist.html",context={"music":my_value})
       else:
          print("error form invalid")      
     return render(request,"music_app/search_artist.html",{"form":form})
@@ -189,8 +192,9 @@ def search_ascap(request):
     if request.method=="POST":
       form=searchform(request.POST)
       if form.is_valid():
-         #form.save(commit=True)
-         return home(request)
+         title=form.cleaned_data["title"]
+         my_value=get_object_or_404(music_db,title=title)
+         return render(request,"music_app/result_ascap.html",context={"music":my_value})
       else:
          print("error form invalid")      
     return render(request,"music_app/search_ascap.html",{"form":form})
@@ -200,8 +204,9 @@ def search_bmi(request):
     if request.method=="POST":
       form=searchform(request.POST)
       if form.is_valid():
-         #form.save(commit=True)
-         return home(request)
+         title=form.cleaned_data["title"]
+         my_value=get_object_or_404(music_db,title=title)
+         return render(request,"music_app/result_bmi.html",context={"music":my_value})
       else:
          print("error form invalid")      
     return render(request,"music_app/search_bmi.html",{"form":form})
@@ -211,8 +216,9 @@ def search_codes(request):
     if request.method=="POST":
       form=searchform(request.POST)
       if form.is_valid():
-         #form.save(commit=True)
-         return home(request)
+         title=form.cleaned_data["title"]
+         my_value=get_object_or_404(music_db,title=title)
+         return render(request,"music_app/result_codes.html",context={"music":my_value})
       else:
          print("error form invalid")      
     return render(request,"music_app/search_codes.html",{"form":form})
@@ -223,8 +229,9 @@ def search_gmr(request):
     if request.method=="POST":
       form=searchform(request.POST)
       if form.is_valid():
-         #form.save(commit=True)
-         return home(request)
+         title=form.cleaned_data["title"]
+         my_value=get_object_or_404(music_db,title=title)
+         return render(request,"music_app/result_gmr.html",context={"music":my_value})
       else:
          print("error form invalid")      
     return render(request,"music_app/search_gmr.html",{"form":form})
@@ -235,8 +242,9 @@ def search_sesac(request):
     if request.method=="POST":
       form=searchform(request.POST)
       if form.is_valid():
-         #form.save(commit=True)
-         return home(request)
+         title=form.cleaned_data["title"]
+         my_value=get_object_or_404(music_db,title=title)
+         return render(request,"music_app/result_sesac.html",context={"music":my_value})
       else:
          print("error form invalid")      
     return render(request,"music_app/search_sesac.html",{"form":form})
