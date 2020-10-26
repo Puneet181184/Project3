@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "music_app/base.html" %}
+{% block body_block %}
+<h1>This is the result_gmr page</h1>
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "music_app:form_gmr" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:search_gmr" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:gmr" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+{% if music %}
+<li>Gmrinfo</li>
+<ul>
+<li> Tracktitle:{{ music.title }}</li>
+<li> GMR ID:{{ music.gmr_id }}</li>
+<li> GMR PUBLISHER:{{ music.gmr_pub  }}</li>
+<li> GMR IPI:{{ music.gmr_ipi }}</li>
+</ul>
+{% endif %}
+{% endblock %}

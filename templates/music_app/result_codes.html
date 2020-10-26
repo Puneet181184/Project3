@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "music_app/base.html" %}
+{% block body_block %}
+<h1>This is the result_codes page</h1>
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "music_app:form_codes" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:search_codes" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:codes" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+{% if music %}
+<li>Codesinfo</li>
+<ul>
+<li> Tracktitle:{{ music.title }}</li>
+<li>ISNI code:{{ music.isni }}</li>
+<li> IPI code:{{ music.ipi }}</li>
+<li>ISRC code:{{ music.isrc }}</li>
+</ul>
+{% endif %}
+{% endblock %}

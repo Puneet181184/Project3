@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "music_app/base.html" %}
+{% block body_block %}
+<h1>This is the result_artist page</h1>
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "music_app:form_artist" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:search_artist" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:artist" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+{% if music %}
+<li>Artistinfo</li>
+<ul>
+<li> Tracktitle:{{ music.title }}</li>
+<li> Artist name:{{ music.artist }}</li>
+<li> Writer/Composer:{{ music.writer }}</li>
+<li>Other name:{{ music.othername }}</li>
+</ul>
+{% endif %}
+{% endblock %}

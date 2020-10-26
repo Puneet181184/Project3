@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "music_app/base.html" %}
+{% block body_block %}
+<h1>This is the result_ascap page</h1>
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "music_app:form_ascap" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:search_ascap" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "music_app:ascap" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+{% if music %}
+<li>Ascapinfo</li>
+<ul>
+<li> Tracktitle:{{ music.title }}</li>
+<li> ASCAP ID:{{ music.ascap_id }}</li>
+<li> ASCAP PUBLISHER:{{ music.ascap_pub }}</li>
+<li> ASCAP IPI:{{ music.ascap_ipi }}</li>
+</ul>
+{% endif %}
+{% endblock %}
