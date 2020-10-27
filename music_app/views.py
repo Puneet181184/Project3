@@ -168,7 +168,10 @@ def search_track(request):
       form=searchform(request.POST)
       if form.is_valid():
          title=form.cleaned_data["title"]
-         my_value=get_object_or_404(music_db,title=title)
+         try:
+             my_value=music_db.objects.get(title=title)
+         except music_db.DoesNotExist:
+             return render(request,"music_app/error_track.html")   
          return render(request,"music_app/result_track.html",context={"music":my_value})
       else:
          print("error form invalid")      
@@ -180,7 +183,10 @@ def search_artist(request):
       form=searchform(request.POST)
       if form.is_valid():
          title=form.cleaned_data["title"]
-         my_value=get_object_or_404(music_db,title=title)
+         try:
+             my_value=music_db.objects.get(title=title)
+         except music_db.DoesNotExist:
+             return render(request,"music_app/error_artist.html")  
          return render(request,"music_app/result_artist.html",context={"music":my_value})
       else:
          print("error form invalid")      
@@ -193,7 +199,10 @@ def search_ascap(request):
       form=searchform(request.POST)
       if form.is_valid():
          title=form.cleaned_data["title"]
-         my_value=get_object_or_404(music_db,title=title)
+         try:
+             my_value=music_db.objects.get(title=title)
+         except music_db.DoesNotExist:
+             return render(request,"music_app/error_ascap.html")  
          return render(request,"music_app/result_ascap.html",context={"music":my_value})
       else:
          print("error form invalid")      
@@ -205,7 +214,10 @@ def search_bmi(request):
       form=searchform(request.POST)
       if form.is_valid():
          title=form.cleaned_data["title"]
-         my_value=get_object_or_404(music_db,title=title)
+         try:
+             my_value=music_db.objects.get(title=title)
+         except music_db.DoesNotExist:
+             return render(request,"music_app/error_bmi.html")  
          return render(request,"music_app/result_bmi.html",context={"music":my_value})
       else:
          print("error form invalid")      
@@ -217,7 +229,10 @@ def search_codes(request):
       form=searchform(request.POST)
       if form.is_valid():
          title=form.cleaned_data["title"]
-         my_value=get_object_or_404(music_db,title=title)
+         try:
+             my_value=music_db.objects.get(title=title)
+         except music_db.DoesNotExist:
+             return render(request,"music_app/error_codes.html")  
          return render(request,"music_app/result_codes.html",context={"music":my_value})
       else:
          print("error form invalid")      
@@ -230,7 +245,10 @@ def search_gmr(request):
       form=searchform(request.POST)
       if form.is_valid():
          title=form.cleaned_data["title"]
-         my_value=get_object_or_404(music_db,title=title)
+         try:
+             my_value=music_db.objects.get(title=title)
+         except music_db.DoesNotExist:
+             return render(request,"music_app/error_gmr.html")  
          return render(request,"music_app/result_gmr.html",context={"music":my_value})
       else:
          print("error form invalid")      
@@ -243,7 +261,10 @@ def search_sesac(request):
       form=searchform(request.POST)
       if form.is_valid():
          title=form.cleaned_data["title"]
-         my_value=get_object_or_404(music_db,title=title)
+         try:
+             my_value=music_db.objects.get(title=title)
+         except music_db.DoesNotExist:
+             return render(request,"music_app/error_sesac.html")  
          return render(request,"music_app/result_sesac.html",context={"music":my_value})
       else:
          print("error form invalid")      
