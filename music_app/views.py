@@ -63,7 +63,7 @@ def form_track(request):
          album=form.cleaned_data["album"]
          defaults={"album":album}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
-         return home(request)
+         return render(request,"music_app/submit_track.html")
       else:
          print("error form invalid")      
     return render(request,"music_app/form_track.html",{"form":form})   
@@ -79,7 +79,7 @@ def form_artist(request):
          othername=form.cleaned_data["othername"]
          defaults={"artist":artist,"writer":writer,"othername":othername}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
-         return home(request)
+         return render(request,"music_app/submit_artist.html")
       else:
          print("error form invalid")      
     return render(request,"music_app/form_artist.html",{"form":form})   
@@ -95,7 +95,7 @@ def form_codes(request):
          isrc=form.cleaned_data["isrc"]
          defaults={"isni":isni,"ipi":ipi,"isrc":isrc}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
-         return home(request)
+         return render(request,"music_app/submit_codes.html")
       else:
          print("error form invalid")      
     return render(request,"music_app/form_codes.html",{"form":form})
@@ -110,7 +110,7 @@ def form_sesac(request):
          sesac_pub=form.cleaned_data["sesac_pub"]
          defaults={"sesac_id":sesac_id,"sesac_pub":sesac_pub}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)        
-         return home(request)
+         return render(request,"music_app/submit_sesac.html")
       else:
          print("error form invalid")      
     return render(request,"music_app/form_sesac.html",{"form":form})
@@ -126,7 +126,7 @@ def form_ascap(request):
          ascap_ipi=form.cleaned_data["ascap_ipi"]
          defaults={"ascap_id":ascap_id,"ascap_pub":ascap_pub,"ascap_ipi":ascap_ipi}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults) 
-         return home(request)
+         return render(request,"music_app/submit_ascap.html")
       else:
          print("error form invalid")      
     return render(request,"music_app/form_ascap.html",{"form":form})
@@ -141,7 +141,8 @@ def form_bmi(request):
          bmi_pub=form.cleaned_data["bmi_pub"]
          defaults={"bmi_id":bmi_id,"bmi_pub":bmi_pub}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
-         return home(request)
+         return render(request,"music_app/submit_bmi.html")
+
       else:
          print("error form invalid")      
     return render(request,"music_app/form_bmi.html",{"form":form})
@@ -157,7 +158,7 @@ def form_gmr(request):
          gmr_ipi=form.cleaned_data["gmr_ipi"]
          defaults={"gmr_id":gmr_id,"gmr_pub":gmr_pub,"gmr_ipi":gmr_ipi}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults) 
-         return home(request)
+         return render(request,"music_app/submit_gmr.html")
       else:
          print("error form invalid")      
     return render(request,"music_app/form_gmr.html",{"form":form})
