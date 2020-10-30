@@ -5,6 +5,8 @@ class music_db(models.Model):
     title=models.CharField(max_length=512,null=True)
     artist=models.CharField(max_length=512,null=True)
     album=models.CharField(max_length=512,null=True)
+    country=models.CharField(max_length=512,null=True)
+    year=models.CharField(max_length=512,null=True)
     writer=models.CharField(max_length=512,null=True)
     othername=models.CharField(max_length=512,null=True)
     isni=models.CharField(max_length=512,null=True)

@@ -8,7 +8,7 @@ class newuserform(forms.ModelForm):
 class trackform(forms.ModelForm):
   class Meta():
     model=music_db
-    fields=["title","album"]
+    fields=["title","album","country","year"]
     
 class artistform(forms.ModelForm):
   class Meta():

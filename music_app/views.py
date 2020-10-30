@@ -61,7 +61,9 @@ def form_track(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          album=form.cleaned_data["album"]
-         defaults={"album":album}
+         country=form.cleaned_data["country"]
+         year=form.cleaned_data["year"]
+         defaults={"album":album,"country":country,"year":year}
          obj,created=music_db.objects.update_or_create(title=title,defaults=defaults)
          return render(request,"music_app/submit_track.html")
       else:
