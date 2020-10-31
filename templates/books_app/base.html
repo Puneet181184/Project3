@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+   <title>Music site</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>-->
+   <!--<link rel="stylesheet" href="{% static "/css/mystyle.css" %}"/>-->
+<style>
+body{
+	font:20px,sans-serif;
+	line-height:1.8;
+	color:#f5f6f7;
+}
+p{
+	font-size:16px;
+
+}
+.margin{
+margin-bottom:45px;
+}
+.bg-1{
+background-color:#1abc9c;
+color:#ffffff;
+}
+.bg-2{
+background-color:#474e5d;
+color:#ffffff; 	
+}
+.container-fluid{
+padding-top:70px;
+padding-bottom:70px;	
+}
+.navbar{
+padding-top:15px;
+padding-bottom:15px;
+border:0;
+border-radius:0;
+margin-bottom:0;
+font-size:12px;
+letter-spacing:5px; 	
+}
+.navbar-nav li a:hover{
+color:#1abc9c !important;	
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "books_app:home" %}>Home</a></li>
+</ul>
+</div>
+</nav>
+<div class="container-fluid bg-1 text-center">
+<h3 class="margin">Welcome to the best collection of books.</h3>	
+<p> Browse author name,isbn codes,price and publisher names for Hundreds of books. You can also add new entries to the data base and search for an existing entry.</p>
+</div>
+ <div class="container-fluid bg-2 text-center">
+   {% block body_block %}
+   {% endblock %}
+   </div>
+<footer class="container-fluid bg-1 text-center">
+<p><a href="#">Contact us</a></p>
+</body>
+</html>	
