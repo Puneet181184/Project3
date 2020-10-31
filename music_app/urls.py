@@ -1,10 +1,10 @@
 from django.conf.urls import url
 from music_app import views
-from django.urls import re_path
+from django.urls import re_path,path
 app_name="music_app"
 urlpatterns=[
   re_path(r'home/',views.home,name='home'),
-  url('track/',views.track,name='track'),
+  re_path(r'track/',views.track,name='track'),
   url('artist/',views.artist,name='artist'),
   url('codes/',views.codes,name='codes'),
   url('sesac/',views.sesac,name='sesac'),
