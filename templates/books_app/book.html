@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "books_app/base.html" %}
+{% block body_block %}
+<h1>This is the book page</h1>
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<!--<li> <a class="navbar-link" href={% url "books_app:form_book" %}>Enter new entry</a></li>-->
+<!--<li> <a class="navbar-link" href={% url "books_app:search_book" %}>Search an entry</a></li>-->
+</ul>
+</div>
+</nav> 	
+{% if book %}
+<ol>
+{% for entry in book %}
+<li>Bookinfo</li>
+<ul>
+<li> Booktitle:{{ entry.title }}</li>
+<li> Pages:{{ entry.pages }}</li>
+</ul>
+{% endfor %}
+</ol>
+{% endif %}
+{% endblock %}
