@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends "books_app/base.html" %}
 {% block body_block %}
-<h1>This is the author page</h1>
+<h1>This is the codes page</h1>
 <nav class="navbar navbar-default navbar-static-top">
 <div class="container">
 <ul class="nav navbar-nav">
@@ -11,11 +11,11 @@
 {% if book %}
 <ol>
 {% for entry in book %}
-<li>Authorinfo</li>
+<li>Codesinfo</li>
 <ul>
 <li> Booktitle:{{ entry.title }}</li>
-<li> author:{{ entry.author }}</li>
-<li>publisher:{{ entry.publisher }}</li>
+<li> isbn:{{ entry.isbn }}</li>
+
 </ul>
 {% endfor %}
 </ol>
