@@ -15,3 +15,13 @@ def author(request):
     books_list=books_db.objects.order_by("title")
     books_dict={"book":books_list}
     return render(request,"books_app/author.html",context=books_dict)	    
+
+def codes(request):
+    books_list=books_db.objects.order_by("title")
+    books_dict={"book":books_list}
+    return render(request,"books_app/codes.html",context=books_dict)	    
+
+def other(request):
+    books_list=books_db.objects.order_by("title")
+    books_dict={"book":books_list}
+    return render(request,"books_app/other.html",context=books_dict)	        
