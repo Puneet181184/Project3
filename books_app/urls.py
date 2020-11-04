@@ -7,7 +7,8 @@ urlpatterns=[
   re_path(r'book/',views.book,name='book'), 
   re_path(r'author/',views.author,name='author'), 
   re_path(r'codes/',views.codes,name='codes'),
-  re_path(r'other/',views.other,name='other')
+  re_path(r'other/',views.other,name='other'),
+  re_path(r'form_b/',views.form_book,name='form_book')
   ]
   
 
