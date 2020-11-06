@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from books_app.models import books_db
 from books_app.forms import bookform
-
+from books_app.forms import authorform
+from books_app.forms import codesform
+from books_app.forms import otherform
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -40,3 +42,48 @@ def form_book(request):
       else:
          print("error form invalid")      
     return render(request,"books_app/form_book.html",{"form":form})   
+
+
+def form_author(request):
+    form=authorform()
+    if request.method=="POST":
+      form=authorform(request.POST)
+      if form.is_valid():
+         title=form.cleaned_data["title"]
+         author=form.cleaned_data["author"]
+         publisher=form.cleaned_data["publisher"]
+         defaults={"author":author,"publisher":publisher}
+         obj,created=books_db.objects.update_or_create(title=title,defaults=defaults)
+         return render(request,"books_app/submit_author.html")
+      else:
+         print("error form invalid")      
+    return render(request,"books_app/form_author.html",{"form":form})  
+
+def form_codes(request):
+    form=codesform()
+    if request.method=="POST":
+      form=codesform(request.POST)
+      if form.is_valid():
+         title=form.cleaned_data["title"]
+         isbn=form.cleaned_data["isbn"]
+         defaults={"isbn":isbn}
+         obj,created=books_db.objects.update_or_create(title=title,defaults=defaults)
+         return render(request,"books_app/submit_codes.html")
+      else:
+         print("error form invalid")      
+    return render(request,"books_app/form_codes.html",{"form":form})  
+
+def form_other(request):
+    form=otherform()
+    if request.method=="POST":
+      form=otherform(request.POST)
+      if form.is_valid():
+         title=form.cleaned_data["title"]
+         year=form.cleaned_data["year"]
+         price=form.cleaned_data["price"]
+         defaults={"year":year,"price":price}
+         obj,created=books_db.objects.update_or_create(title=title,defaults=defaults)
+         return render(request,"books_app/submit_other.html")
+      else:
+         print("error form invalid")      
+    return render(request,"books_app/form_other.html",{"form":form})      

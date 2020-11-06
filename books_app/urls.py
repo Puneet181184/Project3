@@ -8,7 +8,10 @@ urlpatterns=[
   re_path(r'author/',views.author,name='author'), 
   re_path(r'codes/',views.codes,name='codes'),
   re_path(r'other/',views.other,name='other'),
-  re_path(r'form_b/',views.form_book,name='form_book')
+  re_path(r'form_b/',views.form_book,name='form_book'),
+  re_path(r'form_a/',views.form_author,name='form_author'),
+  re_path(r'form_c/',views.form_codes,name='form_codes'),
+  re_path(r'form_o/',views.form_other,name='form_other'),
   ]
   
 
