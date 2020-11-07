@@ -9,14 +9,14 @@ class bookform(forms.ModelForm):
 class authorform(forms.ModelForm):
       class Meta():
          model=books_db
-         fields=["author","publisher"]        
+         fields=["title","author","publisher"]        
 
 class codesform(forms.ModelForm):
       class Meta():
          model=books_db
-         fields=["isbn"]           
+         fields=["title","isbn"]           
 
 class otherform(forms.ModelForm):
       class Meta():
          model=books_db
-         fields=["year","price"]           
+         fields=["title","year","price"]           
