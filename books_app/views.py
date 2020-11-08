@@ -4,6 +4,7 @@ from books_app.forms import bookform
 from books_app.forms import authorform
 from books_app.forms import codesform
 from books_app.forms import otherform
+from books_app.forms import searchform
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -87,3 +88,22 @@ def form_other(request):
       else:
          print("error form invalid")      
     return render(request,"books_app/form_other.html",{"form":form})      
+
+
+def search_book(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         title=form.cleaned_data["title"]
+         try:
+             my_value=books_db.objects.get(title=title) 
+         except books_db.DoesNotExist:
+             return render(request,"books_app/error_book.html")
+         return render(request,"books_app/result_book.html",context={"book":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"books_app/search_book.html",{"form":form})
+    
+      
+

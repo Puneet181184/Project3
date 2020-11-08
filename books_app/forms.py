@@ -19,4 +19,9 @@ class codesform(forms.ModelForm):
 class otherform(forms.ModelForm):
       class Meta():
          model=books_db
-         fields=["title","year","price"]           
+         fields=["title","year","price"]
+
+class searchform(forms.ModelForm):
+      class Meta():
+         model=books_db
+         fields=["title"]                    

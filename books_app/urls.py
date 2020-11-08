@@ -12,6 +12,7 @@ urlpatterns=[
   re_path(r'form_a/',views.form_author,name='form_author'),
   re_path(r'form_c/',views.form_codes,name='form_codes'),
   re_path(r'form_o/',views.form_other,name='form_other'),
+  re_path(r'search_b/',views.search_book,name='search_book'),
   ]
   
 
