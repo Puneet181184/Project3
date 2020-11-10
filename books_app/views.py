@@ -105,5 +105,80 @@ def search_book(request):
          print(" error form invalid")
     return render(request,"books_app/search_book.html",{"form":form})
     
+
+def search_author(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         title=form.cleaned_data["title"]
+         try:
+             my_value=books_db.objects.get(title=title) 
+         except books_db.DoesNotExist:
+             return render(request,"books_app/error_author.html")
+         return render(request,"books_app/result_author.html",context={"book":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"books_app/search_author.html",{"form":form})
+    
+
+def search_codes(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         title=form.cleaned_data["title"]
+         try:
+             my_value=books_db.objects.get(title=title) 
+         except books_db.DoesNotExist:
+             return render(request,"books_app/error_codes.html")
+         return render(request,"books_app/result_codes.html",context={"book":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"books_app/search_codes.html",{"form":form})
+    
+
+def search_other(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         title=form.cleaned_data["title"]
+         try:
+             my_value=books_db.objects.get(title=title) 
+         except books_db.DoesNotExist:
+             return render(request,"books_app/error_other.html")
+         return render(request,"books_app/result_other.html",context={"book":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"books_app/search_other.html",{"form":form})
+    
+
+
       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

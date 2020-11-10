@@ -13,6 +13,9 @@ urlpatterns=[
   re_path(r'form_c/',views.form_codes,name='form_codes'),
   re_path(r'form_o/',views.form_other,name='form_other'),
   re_path(r'search_b/',views.search_book,name='search_book'),
+  re_path(r'search_a/',views.search_author,name='search_author'),
+  re_path(r'search_c/',views.search_codes,name='search_codes'),
+  re_path(r'search_o/',views.search_other,name='search_other'),
   ]
   
 
