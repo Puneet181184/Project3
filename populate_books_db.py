@@ -6,7 +6,7 @@ django.setup()
 from books_app.models import books_db
 
 def add_entry(title,author,publisher,isbn,pages,year,price):
-	t=music_db.objects.get_or_create(title=title,author=author,publisher=publisher,isbn=isbn,pages=pages,year=year,price=price)[0]
+	t=books_db.objects.get_or_create(title=title,author=author,publisher=publisher,isbn=isbn,pages=pages,year=year,price=price)[0]
 	t.save()
     
 
@@ -30,10 +30,10 @@ price=[]
 for row in reader:
 	#print(row["Track Title"])
      title.append(row["Book Title"])
-     author.append(row["Author Name"])
+     author.append(row["Author"])
      publisher.append(row["Publisher"])
      isbn.append(row["ISBN"])
-     pages.append(row["Pages"])
+     pages.append(row["Number of Pages"])
      year.append(row["Year"])
      price.append(row["Price"])
 
