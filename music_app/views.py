@@ -172,7 +172,7 @@ def search_track(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=music_db.objects.get(title=title)
+             my_value=music_db.objects.get(title__iexact=title)
          except music_db.DoesNotExist:
              return render(request,"music_app/error_track.html")   
          return render(request,"music_app/result_track.html",context={"music":my_value})
@@ -187,7 +187,7 @@ def search_artist(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=music_db.objects.get(title=title)
+             my_value=music_db.objects.get(title__iexact=title)
          except music_db.DoesNotExist:
              return render(request,"music_app/error_artist.html")  
          return render(request,"music_app/result_artist.html",context={"music":my_value})
@@ -203,7 +203,7 @@ def search_ascap(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=music_db.objects.get(title=title)
+             my_value=music_db.objects.get(title__iexact=title)
          except music_db.DoesNotExist:
              return render(request,"music_app/error_ascap.html")  
          return render(request,"music_app/result_ascap.html",context={"music":my_value})
@@ -218,7 +218,7 @@ def search_bmi(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=music_db.objects.get(title=title)
+             my_value=music_db.objects.get(title__iexact=title)
          except music_db.DoesNotExist:
              return render(request,"music_app/error_bmi.html")  
          return render(request,"music_app/result_bmi.html",context={"music":my_value})
@@ -233,7 +233,7 @@ def search_codes(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=music_db.objects.get(title=title)
+             my_value=music_db.objects.get(title__iexact=title)
          except music_db.DoesNotExist:
              return render(request,"music_app/error_codes.html")  
          return render(request,"music_app/result_codes.html",context={"music":my_value})
@@ -249,7 +249,7 @@ def search_gmr(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=music_db.objects.get(title=title)
+             my_value=music_db.objects.get(title__iexact=title)
          except music_db.DoesNotExist:
              return render(request,"music_app/error_gmr.html")  
          return render(request,"music_app/result_gmr.html",context={"music":my_value})
@@ -265,7 +265,7 @@ def search_sesac(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=music_db.objects.get(title=title)
+             my_value=music_db.objects.get(title__iexact=title)
          except music_db.DoesNotExist:
              return render(request,"music_app/error_sesac.html")  
          return render(request,"music_app/result_sesac.html",context={"music":my_value})

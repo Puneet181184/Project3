@@ -97,7 +97,7 @@ def search_book(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=books_db.objects.get(title=title) 
+             my_value=books_db.objects.get(title__iexact=title) 
          except books_db.DoesNotExist:
              return render(request,"books_app/error_book.html")
          return render(request,"books_app/result_book.html",context={"book":my_value})
@@ -113,7 +113,7 @@ def search_author(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=books_db.objects.get(title=title) 
+             my_value=books_db.objects.get(title__iexact=title) 
          except books_db.DoesNotExist:
              return render(request,"books_app/error_author.html")
          return render(request,"books_app/result_author.html",context={"book":my_value})
@@ -129,7 +129,7 @@ def search_codes(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=books_db.objects.get(title=title) 
+             my_value=books_db.objects.get(title__iexact=title) 
          except books_db.DoesNotExist:
              return render(request,"books_app/error_codes.html")
          return render(request,"books_app/result_codes.html",context={"book":my_value})
@@ -145,7 +145,7 @@ def search_other(request):
       if form.is_valid():
          title=form.cleaned_data["title"]
          try:
-             my_value=books_db.objects.get(title=title) 
+             my_value=books_db.objects.get(title__iexact=title) 
          except books_db.DoesNotExist:
              return render(request,"books_app/error_other.html")
          return render(request,"books_app/result_other.html",context={"book":my_value})
