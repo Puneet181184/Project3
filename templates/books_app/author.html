@@ -10,17 +10,22 @@
 <li> <a class="navbar-link" href={% url "books_app:author" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav> 
+<table>
+<caption>Authorinfo</caption>
+<tr>
+<th>Booktitle</th>
+<th>Author</th>
+<th>Publisher</th>
+</tr>
 {% if book %}
-<ol>
 {% for entry in book %}
-<li>Authorinfo</li>
-<ul>
-<li> Booktitle:{{ entry.title }}</li>
-<li> author:{{ entry.author }}</li>
-<li>publisher:{{ entry.publisher }}</li>
-</ul>
+<tr>
+<td>{{ entry.title }}</td>
+<td>{{ entry.author }}</td>
+<td>{{ entry.publisher }}</td>
+</tr>
 {% endfor %}
-</ol>
 {% endif %}
+</table>	
 {% endblock %}

@@ -10,17 +10,20 @@
 <li> <a class="navbar-link" href={% url "books_app:codes" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav>
+<table>
+<caption>Codesinfo</caption>
+<tr>
+<th>Booktitle</th>
+<th>ISBN</th>
+</tr>
 {% if book %}
-<ol>
 {% for entry in book %}
-<li>Codesinfo</li>
-<ul>
-<li> Booktitle:{{ entry.title }}</li>
-<li> isbn:{{ entry.isbn }}</li>
-
-</ul>
+<tr>
+<td>{{ entry.title }}</td>
+<td>{{ entry.isbn }}</td>
+</tr>
 {% endfor %}
-</ol>
 {% endif %}
+</table>	 	
 {% endblock %}
