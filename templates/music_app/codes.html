@@ -9,18 +9,24 @@
 <li> <a class="navbar-link" href={% url "music_app:search_codes" %}>Search an entry</a></li>
 </ul>
 </div>
-</nav> 		
+</nav>
+<table>
+<caption>Codesinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>ISNI</th>
+<th>IPI</th>
+<th>ISRC</th>
+</tr>
 {% if music %}
-<ol>
 {% for track in music %}
-<li>Codesinfo</li>
-<ul>
-<li>ISNI code:{{ track.isni }}</li>
-<li> IPI code:{{ track.ipi }}</li>
-<li>ISRC code:{{ track.isrc }}</li>
-</ul>
+<tr>
+<td>{{ track.title }}</td>
+<td>{{ track.isni }}</td>
+<td>{{ track.ipi }}</td>
+<td>{{ track.isrc }}</td>
+</tr>
 {% endfor %}
-</ol>
-{% endif %} 
-
+{% endif %}
+</table> 			
 {% endblock %}

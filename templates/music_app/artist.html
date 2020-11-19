@@ -9,18 +9,24 @@
 <li> <a class="navbar-link" href={% url "music_app:search_artist" %}>Search an entry</a></li>
 </ul>
 </div>
-</nav> 		
+</nav>
+<table>
+<caption>Artistinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Artist</th>
+<th>Writer</th>
+<th>Othername</th>
+</tr>
 {% if music %}
-<ol>
 {% for track in music %}
-<li>Artistinfo</li>
-<ul>
-<li> Artist name:{{ track.artist }}</li>
-<li> Writer/Composer:{{ track.writer }}</li>
-<li>Other name:{{ track.othername }}</li>
-</ul>
+<tr>
+<td>{{ track.title }}</td>
+<td>{{ track.artist }}</td>
+<td>{{ track.writer }}</td>
+<td>{{ track.othername }}</td>
+</tr>
 {% endfor %}
-</ol>
-{% endif %} 
-
+{% endif %}
+</table> 	 		
 {% endblock %}

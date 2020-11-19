@@ -9,18 +9,24 @@
 <li> <a class="navbar-link" href={% url "music_app:search_track" %}>Search an entry</a></li>
 </ul>
 </div>
-</nav> 	
+</nav>
+<table>
+<caption>Trackinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Album</th>
+<th>Country</th>
+<th>Year</th>
+</tr>
 {% if music %}
-<ol>
 {% for track in music %}
-<li>Trackinfo</li>
-<ul>
-<li> Tracktitle:{{ track.title }}</li>
-<li> Album:{{ track.album }}</li>
-<li> Country:{{ track.country }}</li>
-<li> Year:{{ track.year }}</li>
-</ul>
+<tr>
+<td>{{ track.title }}</td>
+<td>{{ track.album }}</td>
+<td>{{ track.country }}</td>
+<td>{{ track.year }}</td>
+</tr>
 {% endfor %}
-</ol>
 {% endif %}
+</table> 	
 {% endblock %}
