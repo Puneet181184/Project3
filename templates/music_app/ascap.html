@@ -9,18 +9,24 @@
 <li> <a class="navbar-link" href={% url "music_app:search_ascap" %}>Search an entry</a></li>
 </ul>
 </div>
-</nav> 		
+</nav>
+<table>
+<caption>Ascapinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Ascap_id</th>
+<th>Ascap_publisher</th>
+<th>Ascap_ipi</th>
+</tr>
 {% if music %}
-<ol>
 {% for track in music %}
-<li>ASCAPinfo</li>
-<ul>
-<li> ASCAP ID:{{ track.ascap_id }}</li>
-<li> ASCAP PUBLISHER:{{ track.ascap_pub }}</li>
-<li> ASCAP IPI:{{ track.ascap_ipi }}</li>
-</ul>
+<tr>
+<td>{{ track.title }}</td>
+<td>{{ track.ascap_id }}</td>
+<td>{{ track.ascap_pub }}</td>
+<td>{{ track.ascap_ipi }}</td>
+</tr>
 {% endfor %}
-</ol>
-{% endif %} 
-
+{% endif %}
+</table>  
 {% endblock %}

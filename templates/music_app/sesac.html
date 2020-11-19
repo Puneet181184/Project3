@@ -9,17 +9,22 @@
 <li> <a class="navbar-link" href={% url "music_app:search_sesac" %}>Search an entry</a></li>
 </ul>
 </div>
-</nav> 		
+</nav>
+<table>
+<caption>Sesacinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Sesac_id</th>
+<th>Sesac_publisher</th>
+</tr>
 {% if music %}
-<ol>
 {% for track in music %}
-<li>SESACinfo</li>
-<ul>
-<li> SESAC ID:{{ track.sesac_id }}</li>
-<li> SESAC PUBLISHER:{{ track.sesac_pub }}</li>
-</ul>
+<tr>
+<td>{{ track.title }}</td>
+<td>{{ track.sesac_id }}</td>
+<td>{{ track.sesac_pub }}</td>
+</tr>
 {% endfor %}
-</ol>
-{% endif %} 
-
+{% endif %}
+</table> 	 	
 {% endblock %}

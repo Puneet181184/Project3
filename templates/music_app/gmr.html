@@ -9,18 +9,24 @@
 <li> <a class="navbar-link" href={% url "music_app:search_gmr" %}>Search an entry</a></li>
 </ul>
 </div>
-</nav> 	
+</nav>
+<table>
+<caption>Gmrinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Gmr_id</th>
+<th>Gmr_publisher</th>
+<th>Gmr_ipi</th>
+</tr>
 {% if music %}
-<ol>
 {% for track in music %}
-<li>GMRinfo</li>
-<ul>
-<li> GMR ID:{{ track.gmr_id }}</li>
-<li> GMR PUBLISHER:{{ track.gmr_pub  }}</li>
-<li> GMR IPI:{{ track.gmr_ipi }}</li>
-</ul>
+<tr>
+<td>{{ track.title }}</td>
+<td>{{ track.gmr_id }}</td>
+<td>{{ track.gmr_pub }}</td>
+<td>{{ track.gmr_ipi }}</td>
+</tr>
 {% endfor %}
-</ol>
-{% endif %} 
-
+{% endif %}
+</table> 	 	
 {% endblock %}
