@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'music_app',
-    'books_app'
+    'books_app',
+     'main',
 
 ]
 
