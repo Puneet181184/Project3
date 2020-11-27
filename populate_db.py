@@ -6,10 +6,10 @@ django.setup()
 from music_app.models import music_db
 
 def add_entry(title,artist,album,writer,othername,isni,ipi,isrc,sesac_id,sesac_pub,
-	ascap_id,ascap_pub,ascap_ipi,bmi_id,bmi_pub,gmr_id,gmr_pub,gmr_ipi):
+	ascap_id,ascap_pub,ascap_ipi,bmi_id,bmi_pub,gmr_id,gmr_pub,gmr_ipi,country,year):
 	t=music_db.objects.get_or_create(title=title,artist=artist,album=album,writer=writer,othername=othername,isni=isni,ipi=ipi,
 		isrc=isrc,sesac_id=sesac_id,sesac_pub=sesac_pub,ascap_id=ascap_id,ascap_pub=ascap_pub,ascap_ipi=ascap_ipi,
-		bmi_id=bmi_id,bmi_pub=bmi_pub,gmr_id=gmr_id,gmr_pub=gmr_pub,gmr_ipi=gmr_ipi)[0]
+		bmi_id=bmi_id,bmi_pub=bmi_pub,gmr_id=gmr_id,gmr_pub=gmr_pub,gmr_ipi=gmr_ipi,country=country,year=year)[0]
 	t.save()
     
 
@@ -37,6 +37,8 @@ bmi_pub=[]
 gmr_id=[]
 gmr_pub=[]
 gmr_ipi=[]
+country=[]
+year=[]
 
 
 #read values from the csv file
@@ -60,12 +62,14 @@ for row in reader:
      gmr_id.append(row["GMR Work ID"])
      gmr_pub.append(row["GMR Publisher"])
      gmr_ipi.append(row["GMR Publishers' IPI"])
+     country.append(row["Country"])
+     year.append(row["Year"])
 
 
 #inserting values into the Table
 for i in range(0,len(title)):
 	add_entry(title[i],artist[i],album[i],writer[i],othername[i],isni[i],ipi[i],isrc[i],sesac_id[i],sesac_pub[i],
-		ascap_id[i],ascap_pub[i],ascap_ipi[i],bmi_id[i],bmi_pub[i],gmr_id[i],gmr_pub[i],gmr_ipi[i])
+		ascap_id[i],ascap_pub[i],ascap_ipi[i],bmi_id[i],bmi_pub[i],gmr_id[i],gmr_pub[i],gmr_ipi[i],country[i],year[i])
 	
 
 
