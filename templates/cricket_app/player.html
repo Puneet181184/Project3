@@ -5,9 +5,6 @@
 <nav class="navbar navbar-inverse navbar-static-top">
 <div class="container">
 <ul class="nav navbar-nav">
-<li> <a class="navbar-link" href={% url "" %}>Enter new entry</a></li>
-<li> <a class="navbar-link" href={% url "" %}>Search an entry</a></li>
-<li> <a class="navbar-link" href={% url ":" %}>Go back to list</a></li>	
 </ul>
 </div>
 </nav>
@@ -23,7 +20,7 @@
 <tr>
 <td>{{ entry.name }}</td>
 <td>{{ entry.age }}</td>
-<td>{{ entry.country }}</td>
+<td>{{ entry.country }}<
 </tr>
 {% endfor %}
 {% endif %}

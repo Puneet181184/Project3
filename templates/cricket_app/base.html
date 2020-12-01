@@ -77,18 +77,19 @@ color:black;
 <nav class="navbar navbar-default navbar-static-top">
 <div class="container">
 <ul class="nav navbar-nav">
-<li><a class="navbar-link" href={% url "books_app:home" %}>Home</a></li>
-<li><a class="navbar-link" href={% url "books_app:book" %}>Books</a></li>
-<li><a class="navbar-link" href={% url "books_app:author" %}>Author</a></li>
-<li><a class="navbar-link" href={% url "books_app:codes" %}>Codes</a></li>
-<li><a class="navbar-link" href={% url "books_app:other" %}>Other</a></li>
+<li><a class="navbar-link" href={% url "cricket_app:home" %}>Home</a></li>
+<li><a class="navbar-link" href={% url "cricket_app:player" %}>Players</a></li>
+<li><a class="navbar-link" href={% url "cricket_app:about" %}>About</a></li>
+<li><a class="navbar-link" href={% url "cricket_app:odistats" %}>ODIstats</a></li>
+<li><a class="navbar-link" href={% url "cricket_app:teststats" %}>TESTstats</a></li>
+<li><a class="navbar-link" href={% url "cricket_app:t20stats" %}>T20stats</a></li>  
 
 </ul>
 </div>
 </nav>
 <div class="container-fluid bg-1 text-center">
 <h3 class="margin">Welcome to the best collection of cricket players.</h3>	
-<p> Browse details for Hundreds of players.. You can also add new entries to the data base and search for an existing entry.</p>
+<p> Browse details for Hundreds of players. You can also add new entries to the data base and search for an existing entry.</p>
 </div>
  <div class="container-fluid bg-2 text-center">
    {% block body_block %}
