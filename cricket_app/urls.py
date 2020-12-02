@@ -9,6 +9,7 @@ urlpatterns=[
   re_path(r'odistats/',views.odistats,name='odistats'),
   re_path(r'teststats/',views.teststats,name='teststats'),
   re_path(r't20stats/',views.t20stats,name='t20stats'),
+  re_path(r'form_p/',views.form_player,name='form_player'),
   ]
   
 
