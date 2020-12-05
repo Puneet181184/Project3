@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from cricket_app.models import cricket_db
 from cricket_app.forms import playerform
+from cricket_app.forms import aboutform
+from cricket_app.forms import odistatsform
+from cricket_app.forms import teststatsform
+from cricket_app.forms import t20statsform
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -95,7 +99,7 @@ def form_teststats(request):
 
 
 def form_t20stats(request):
-    form=t20tatsform()
+    form=t20statsform()
     if request.method=="POST":
       form=t20statsform(request.POST)
       if form.is_valid():
