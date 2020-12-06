@@ -5,6 +5,7 @@ from cricket_app.forms import aboutform
 from cricket_app.forms import odistatsform
 from cricket_app.forms import teststatsform
 from cricket_app.forms import t20statsform
+from cricket_app.forms import searchform
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -113,4 +114,25 @@ def form_t20stats(request):
          return render(request,"cricket_app/submit_t20stats.html")
       else:
          print("error form invalid")      
-    return render(request,"cricket_app/form_t20stats.html",{"form":form})                 
+    return render(request,"cricket_app/form_t20stats.html",{"form":form})   
+
+
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=cricket_db.objects.get(name__iexact=name) 
+         except cricket_db.DoesNotExist:
+             return render(request,"cricket_app/error_player.html")
+         return render(request,"cricket_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"cricket_app/search_player.html",{"form":form})
+    
+
+
+
+
