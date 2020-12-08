@@ -15,6 +15,10 @@ urlpatterns=[
   re_path(r'form_t/',views.form_teststats,name='form_teststats'),
   re_path(r'form_t20/',views.form_t20stats,name='form_t20stats'),
   re_path(r'search_p/',views.search_player,name='search_player'),
+  re_path(r'search_a/',views.search_about,name='search_about'),
+  re_path(r'search_o/',views.search_odistats,name='search_odistats'),
+  re_path(r'search_t/',views.search_teststats,name='search_teststats'),
+  re_path(r'search_t20/',views.search_t20stats,name='search_t20stats'),
   ]
   
 
