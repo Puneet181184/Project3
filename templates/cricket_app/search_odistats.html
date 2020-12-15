@@ -8,11 +8,10 @@
 <li> <a class="navbar-link" href={% url "cricket_app:form_odistats" %}>Enter new entry</a></li>
 <li> <a class="navbar-link" href={% url "cricket_app:search_odistats" %}>Search an entry</a></li>
 <li> <a class="navbar-link" href={% url "cricket_app:odistats" %}>Go back to list</a></li>
-
 </ul>
 </div>
 </nav> 	
-<div class="container">
+<div class="container-fluid">
 <form method="POST">
 {{ form.as_p }}
 {% csrf_token %}

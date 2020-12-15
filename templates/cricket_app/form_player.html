@@ -11,12 +11,11 @@
 </ul>
 </div>
 </nav> 	
-<div class="container">
+<div class="container-fluid">
 <form method="POST">
 {{ form.as_p }}
 {% csrf_token %}
 <input type="submit" class="btn btn-primary" value="submit">	
 </form>
 </div>
-
 {% endblock %}
