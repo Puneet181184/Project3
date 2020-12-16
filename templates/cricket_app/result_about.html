@@ -10,13 +10,20 @@
 <li> <a class="navbar-link" href={% url "cricket_app:about" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav>
+<table>
+<caption>Aboutinfo</caption>
+<tr>
+<th>Name</th>
+<th>Debut</th>
+<th>Skill</th>
+</tr>
 {% if player %}
-<li>Aboutinfo</li>
-<ul>
-<li> Name:{{ player.name }}</li>
-<li> Debut:{{ player.debut }}</li>
-<li> Skill:{{ player.skill }}</li>
-</ul>
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.debut }}</td>
+<td>{{ player.skill }}</td>
+</tr>
 {% endif %}
+</table> 	 	
 {% endblock %}

@@ -10,15 +10,24 @@
 <li> <a class="navbar-link" href={% url "cricket_app:t20stats" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav> 
+<table>
+<caption>T20statsinfo</caption>
+<tr>
+<th>Name</th>
+<th>T20matches</th>
+<th>T20runs</th>
+<th>T20wickets</th>
+<th>T20catches</th>
+</tr>
 {% if player %}
-<li>T20statsinfo</li>
-<ul>
-<li> Name:{{ player.name }}</li>
-<li> T20matches:{{ player.t20matches }}</li>
-<li> T20runs:{{ player.t20runs }}</li>
-<li> T20wickets:{{ player.t20wickets }}</li>
-<li> T20catches:{{ player.t20catches }}</li>
-</ul>
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.t20matches }}</td>
+<td>{{ player.t20runs }}</td>
+<td>{{ player.t20wickets }}</td>
+<td>{{ player.t20catches }}</td>
+</tr>
 {% endif %}
+</table> 	 		
 {% endblock %}
