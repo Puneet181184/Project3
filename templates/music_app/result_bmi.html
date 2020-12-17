@@ -10,13 +10,20 @@
 <li> <a class="navbar-link" href={% url "music_app:bmi" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav> 
+<table>
+<caption>Bmiinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Bmi_id</th>
+<th>Bmi_pub</th>
+</tr>
 {% if music %}
-<li>Bmiinfo</li>
-<ul>
-<li> Tracktitle:{{ music.title }}</li>
-<li> BMI ID:{{ music.bmi_id }}</li>
-<li> BMI PUBLISHER:{{ music.bmi_pub }}</li>
-</ul>
+<tr>
+<td>{{ music.title }}</td>
+<td>{{ music.bmi_id }}</td>
+<td>{{ music.bmi_pub }}</td>
+</tr>
 {% endif %}
+</table> 	 		
 {% endblock %}

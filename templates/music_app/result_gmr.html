@@ -10,14 +10,22 @@
 <li> <a class="navbar-link" href={% url "music_app:gmr" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav>
+<table>
+<caption>Gmrinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Gmr_id</th>
+<th>Gmr_pub</th>
+<th>Gmr_ipi</th>
+</tr>
 {% if music %}
-<li>Gmrinfo</li>
-<ul>
-<li> Tracktitle:{{ music.title }}</li>
-<li> GMR ID:{{ music.gmr_id }}</li>
-<li> GMR PUBLISHER:{{ music.gmr_pub  }}</li>
-<li> GMR IPI:{{ music.gmr_ipi }}</li>
-</ul>
+<tr>
+<td>{{ music.title }}</td>
+<td>{{ music.gmr_id }}</td>
+<td>{{ music.gmr_pub }}</td>
+<td>{{ music.gmr_ipi }}</td>
+</tr>
 {% endif %}
+</table> 	 	 	
 {% endblock %}

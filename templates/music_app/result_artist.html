@@ -10,14 +10,22 @@
 <li> <a class="navbar-link" href={% url "music_app:artist" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav>
+<table>
+<caption>Artistinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Artist</th>
+<th>Writer</th>
+<th>Othername</th>
+</tr>
 {% if music %}
-<li>Artistinfo</li>
-<ul>
-<li> Tracktitle:{{ music.title }}</li>
-<li> Artist name:{{ music.artist }}</li>
-<li> Writer/Composer:{{ music.writer }}</li>
-<li>Other name:{{ music.othername }}</li>
-</ul>
+<tr>
+<td>{{ music.title }}</td>
+<td>{{ music.artist }}</td>
+<td>{{ music.writer }}</td>
+<td>{{ music.othername }}</td>
+</tr>
 {% endif %}
+</table> 	 	
 {% endblock %}

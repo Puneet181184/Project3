@@ -10,13 +10,20 @@
 <li> <a class="navbar-link" href={% url "music_app:sesac" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav>
+<table>
+<caption>Sesacinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Sesac_id</th>
+<th>Sesac_pub</th>
+</tr>
 {% if music %}
-<li>Sesacinfo</li>
-<ul>
-<li> Tracktitle:{{ music.title }}</li>
-<li> SESAC ID:{{ music.sesac_id }}</li>
-<li> SESAC PUBLISHER:{{ music.sesac_pub }}</li>
-</ul>
+<tr>
+<td>{{ music.title }}</td>
+<td>{{ music.sesac_id }}</td>
+<td>{{ music.sesac_pub }}</td>
+</tr>
 {% endif %}
+</table> 	 	
 {% endblock %}

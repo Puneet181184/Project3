@@ -10,14 +10,22 @@
 <li> <a class="navbar-link" href={% url "music_app:ascap" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav> 
+<table>
+<caption>Ascapinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>Ascap_id</th>
+<th>Ascap_pub</th>
+<th>Ascap_ipi</th>
+</tr>
 {% if music %}
-<li>Ascapinfo</li>
-<ul>
-<li> Tracktitle:{{ music.title }}</li>
-<li> ASCAP ID:{{ music.ascap_id }}</li>
-<li> ASCAP PUBLISHER:{{ music.ascap_pub }}</li>
-<li> ASCAP IPI:{{ music.ascap_ipi }}</li>
-</ul>
+<tr>
+<td>{{ music.title }}</td>
+<td>{{ music.ascap_id }}</td>
+<td>{{ music.ascap_pub }}</td>
+<td>{{ music.ascap_ipi }}</td>
+</tr>
 {% endif %}
+</table> 	 		
 {% endblock %}

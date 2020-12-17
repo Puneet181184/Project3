@@ -10,14 +10,22 @@
 <li> <a class="navbar-link" href={% url "music_app:codes" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav> 	
+</nav> 
+<table>
+<caption>Codesinfo</caption>
+<tr>
+<th>Tracktitle</th>
+<th>ISNI</th>
+<th>IPI</th>
+<th>ISRC</th>
+</tr>
 {% if music %}
-<li>Codesinfo</li>
-<ul>
-<li> Tracktitle:{{ music.title }}</li>
-<li>ISNI code:{{ music.isni }}</li>
-<li> IPI code:{{ music.ipi }}</li>
-<li>ISRC code:{{ music.isrc }}</li>
-</ul>
+<tr>
+<td>{{ music.title }}</td>
+<td>{{ music.isni }}</td>
+<td>{{ music.ipi }}</td>
+<td>{{ music.isrc }}</td>
+</tr>
 {% endif %}
+</table> 	 		
 {% endblock %}
