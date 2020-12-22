@@ -76,18 +76,16 @@ color:black;
 </style>
 </head>
 <body>
-<div class="w3-sidebar w3-bar-block w3-black" style="width:12%">
-<a href={% url "main:main" %} class="w3-bar-item w3-button">Sitehome</a>
-<a href={% url "music_app:home" %} class="w3-bar-item w3-button">Musichome</a>
-<a href={% url "books_app:home" %} class="w3-bar-item w3-button">Bookshome</a>
-<a href={% url "cricket_app:home" %} class="w3-bar-item w3-button">Crickethome</a>
+<div class="w3-sidebar w3-bar-block w3-blue w3-border" style="width:12%">
+<a href={% url "main:main" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Sitehome</a>
+<a href={% url "music_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Musichome</a>
+<a href={% url "books_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Bookshome</a>
+<a href={% url "cricket_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Crickethome</a>
 </div>
 <div style="margin-left:12%">   
 <nav class="navbar navbar-default navbar-static-top">
 <div class="container">
 <ul class="nav navbar-nav">
-<li><a class="navbar-link" href={% url "main:main" %}>Sitehome</a></li>  
-<li><a class="navbar-link" href={% url "books_app:home" %}>Bookshome</a></li>
 <li><a class="navbar-link" href={% url "books_app:book" %}>Books</a></li>
 <li><a class="navbar-link" href={% url "books_app:author" %}>Author</a></li>
 <li><a class="navbar-link" href={% url "books_app:codes" %}>Codes</a></li>
