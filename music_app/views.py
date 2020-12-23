@@ -15,6 +15,9 @@ from django.shortcuts import get_object_or_404
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"music_app/home.html")
+def main(request):
+	#return HttpResponse("Hello World!")
+	return render(request,"home.html")	
 def track(request):
     music_list=music_db.objects.order_by("title")
     music_dict={"music":music_list}

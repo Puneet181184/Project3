@@ -4,6 +4,7 @@ from django.urls import re_path,path
 app_name="music_app"
 urlpatterns=[
   re_path(r'home/',views.home,name='home'),
+  re_path(r'main/',views.main,name='main'),
   re_path(r'track/',views.track,name='track'),
   url('artist/',views.artist,name='artist'),
   url('codes/',views.codes,name='codes'),

@@ -21,4 +21,5 @@ urlpatterns = [
     path("music_app",include("music_app.urls")),
     path("books_app",include("books_app.urls")),
     path("home",include("main.urls")),
+    path("cricket_app",include("cricket_app.urls")),
 ]
