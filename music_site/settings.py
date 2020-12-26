@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'books_app',
     'main',
     'cricket_app',
+    'football_app',
 
 ]
 

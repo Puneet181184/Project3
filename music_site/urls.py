@@ -22,4 +22,5 @@ urlpatterns = [
     path("books_app",include("books_app.urls")),
     path("home",include("main.urls")),
     path("cricket_app",include("cricket_app.urls")),
+    path("football_app",include("football_app.urls")),
 ]
