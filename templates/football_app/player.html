@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "football_app/base.html" %}
+{% block body_block %}
+<h1>This page has the age and country details for all players.</h1>
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+</ul>
+</div>
+</nav>
+<table>
+<caption>Playerinfo</caption>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Date of Birth</th>
+<th>Nationality</th>
+<th>Birthplace</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.age }}</td>
+<td>{{ entry.dob }}</td>
+<td>{{ entry.nationality }}</td>
+<td>{{ entry.birthplace }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
