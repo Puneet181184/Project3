@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from football_app.models import football_db
 
 
 def home(request):
