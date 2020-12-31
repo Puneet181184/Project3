@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "football_app/base.html" %}
+{% block body_block %}
+<h1>This page has the fifa id and debut details for all players.</h1>
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+</ul>
+</div>
+</nav>
+<table>
+<caption>Aboutinfo</caption>
+<tr>
+<th>Name</th>
+<th>Fifa id</th>
+<th>Debut</th>
+<th>Position</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.fifaid }}</td>
+<td>{{ entry.debut }}</td>
+<td>{{ entry.position }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}

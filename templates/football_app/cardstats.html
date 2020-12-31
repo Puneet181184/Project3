@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "football_app/base.html" %}
+{% block body_block %}
+<h1>This page has the card details for all players.</h1>
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+</ul>
+</div>
+</nav>
+<table>
+<caption>Cardinfo</caption>
+<tr>
+<th>Name</th>
+<th>Yellow cards </th>
+<th>Red cards</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.yellowcards }}</td>
+<td>{{ entry.redcards }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "football_app/base.html" %}
+{% block body_block %}
+<h1>This page has the goals details for all players.</h1>
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+</ul>
+</div>
+</nav>
+<table>
+<caption>Goalsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Goals scored</th>
+<th>Goals assists</th>
+<th>Goals conceded</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.goals }}</td>
+<td>{{ entry.assists }}</td>
+<td>{{ entry.goalsconceded }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
