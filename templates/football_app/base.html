@@ -90,8 +90,14 @@ w3-hover-text-black w3-xxlarge"><i class="fa fa-home"></i></a>
 <nav class="navbar navbar-default navbar-static-top">
 <div class="container">
 <ul class="nav navbar-nav">
- 
 
+<li><a class="navbar-link" href={% url "football_app:player" %}>Players</a></li> 
+<li><a class="navbar-link" href={% url "football_app:about" %}>About</a></li>
+<li><a class="navbar-link" href={% url "football_app:details" %}>Details</a></li>
+<li><a class="navbar-link" href={% url "football_app:matchstats" %}>Matchstats</a></li>
+<li><a class="navbar-link" href={% url "football_app:goalstats" %}>Goalstats</a></li>
+<li><a class="navbar-link" href={% url "football_app:penaltystats" %}>Penaltystats</a></li>
+<li><a class="navbar-link" href={% url "football_app:cardstats" %}>Cardstats</a></li>
 </ul>
 </div>
 </nav>
