@@ -11,6 +11,7 @@ urlpatterns=[
   re_path(r'goalstats/',views.goalstats,name='goalstats'),
   re_path(r'penaltystats/',views.penaltystats,name='penaltystats'),
   re_path(r'cardstats/',views.cardstats,name='cardstats'),
+  re_path(r'form_p/',views.form_player,name='form_player'),
   
   ]
   
