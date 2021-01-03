@@ -46,7 +46,7 @@ def form_player(request):
          nationality=form.cleaned_data["nationality"]
          birthplace=form.cleaned_data["birthplace"]
          defaults={"age":age,"dob":dob,"nationality":nationality,"birthplace":birthplace}
-         obj,created=cricket_db.objects.update_or_create(name=name,defaults=defaults)
+         obj,created=football_db.objects.update_or_create(name=name,defaults=defaults)
          return render(request,"football_app/submit_player.html")
       else:
          print("error form invalid")      
