@@ -12,7 +12,12 @@ urlpatterns=[
   re_path(r'penaltystats/',views.penaltystats,name='penaltystats'),
   re_path(r'cardstats/',views.cardstats,name='cardstats'),
   re_path(r'form_p/',views.form_player,name='form_player'),
-  
+  re_path(r'form_a/',views.form_about,name='form_about'),
+  re_path(r'form_d/',views.form_details,name='form_details'),
+  re_path(r'form_m/',views.form_matchstats,name='form_matchstats'),
+  re_path(r'form_g/',views.form_goalstats,name='form_goalstats'),
+  re_path(r'form_pe/',views.form_penaltystats,name='form_penaltystats'),
+  re_path(r'form_c/',views.form_cardstats,name='form_cardstats'),
   ]
   
 
