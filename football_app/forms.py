@@ -11,7 +11,7 @@ class aboutform(forms.ModelForm):
          model=football_db
          fields=["name","fifaid","debut","position"]
 
-class detaisform(forms.ModelForm):
+class detailsform(forms.ModelForm):
       class Meta():
          model=football_db
          fields=["name","league","club","height","weight","foot"]

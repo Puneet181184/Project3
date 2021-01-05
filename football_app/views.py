@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from football_app.models import football_db
 from football_app.forms import playerform
+from football_app.forms import aboutform
+from football_app.forms import detailsform
+from football_app.forms import matchstatsform
+from football_app.forms import goalstatsform
+from football_app.forms import penaltystatsform
+from football_app.forms import cardstatsform
 
 
 def home(request):
@@ -101,7 +107,7 @@ def form_matchstats(request):
     return render(request,"football_app/form_matchstats.html",{"form":form}) 
 
 def form_goalstats(request):
-    form=goalstatsrform()
+    form=goalstatsform()
     if request.method=="POST":
       form=goalstatsform(request.POST)
       if form.is_valid():
