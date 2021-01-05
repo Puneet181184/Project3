@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "football_app/base.html" %}
+{% block body_block %}
+<h1>Enter the name, league and club details for new player entry.</h1>
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "football_app:form_details" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "football_app:details" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+<div class="container-fluid">
+<form method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<input type="submit" class="btn btn-primary" value="submit">	
+</form>
+</div>
+{% endblock %}
