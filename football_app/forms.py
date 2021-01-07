@@ -36,7 +36,10 @@ class cardstatsform(forms.ModelForm):
          model=football_db
          fields=["name","yellowcards","redcards"]
 
-
+class searchform(forms.ModelForm):
+      class Meta():
+         model=football_db
+         fields=["name"]   
 
 
 

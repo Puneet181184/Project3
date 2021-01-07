@@ -7,7 +7,7 @@ from football_app.forms import matchstatsform
 from football_app.forms import goalstatsform
 from football_app.forms import penaltystatsform
 from football_app.forms import cardstatsform
-
+from football_app.forms import searchform
 
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -152,6 +152,23 @@ def form_cardstats(request):
       else:
          print("error form invalid")      
     return render(request,"football_app/form_cardstats.html",{"form":form}) 
+
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=football_db.objects.get(name__iexact=name) 
+         except football_db.DoesNotExist:
+             return render(request,"football_app/error_player.html")
+         return render(request,"football_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"football_app/search_player.html",{"form":form})
+ 
+
 
 
 
