@@ -19,7 +19,12 @@ urlpatterns=[
   re_path(r'form_pe/',views.form_penaltystats,name='form_penaltystats'),
   re_path(r'form_c/',views.form_cardstats,name='form_cardstats'),
   re_path(r'search_p/',views.search_player,name='search_player'),
-  
-  ]
+  re_path(r'search_a/',views.search_about,name='search_about'),
+  re_path(r'search_d/',views.search_details,name='search_details'),
+  re_path(r'search_m/',views.search_matchstats,name='search_matchstats'),
+  re_path(r'search_g/',views.search_goalstats,name='search_goalstats'),
+  re_path(r'search_pe/',views.search_penaltystats,name='search_penaltystats'),
+  re_path(r'search_c/',views.search_cardstats,name='search_cardstats'),
+ ]
   
 

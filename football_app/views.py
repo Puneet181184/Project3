@@ -168,7 +168,101 @@ def search_player(request):
          print(" error form invalid")
     return render(request,"football_app/search_player.html",{"form":form})
  
+def search_about(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=football_db.objects.get(name__iexact=name) 
+         except football_db.DoesNotExist:
+             return render(request,"football_app/error_about.html")
+         return render(request,"football_app/result_about.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"football_app/search_about.html",{"form":form})
 
+def search_details(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=football_db.objects.get(name__iexact=name) 
+         except football_db.DoesNotExist:
+             return render(request,"football_app/error_details.html")
+         return render(request,"football_app/result_details.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"football_app/search_details.html",{"form":form})
+
+def search_matchstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=football_db.objects.get(name__iexact=name) 
+         except football_db.DoesNotExist:
+             return render(request,"football_app/error_matchstats.html")
+         return render(request,"football_app/result_matchstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"football_app/search_matchstats.html",{"form":form})
+
+def search_goalstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=football_db.objects.get(name__iexact=name) 
+         except football_db.DoesNotExist:
+             return render(request,"football_app/error_goalstats.html")
+         return render(request,"football_app/result_goalstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"football_app/search_goalstats.html",{"form":form})
+
+def search_penaltystats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=football_db.objects.get(name__iexact=name) 
+         except football_db.DoesNotExist:
+             return render(request,"football_app/error_penaltystats.html")
+         return render(request,"football_app/result_penaltystats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"football_app/search_penaltystats.html",{"form":form})
+
+def search_cardstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=football_db.objects.get(name__iexact=name) 
+         except football_db.DoesNotExist:
+             return render(request,"football_app/error_cardstats.html")
+         return render(request,"football_app/result_cardstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"football_app/search_cardstats.html",{"form":form})
+
+
+
+
+
+ 
 
 
 
