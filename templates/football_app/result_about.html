@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "football_app/base.html" %}
+{% block body_block %}
+<h1>Please find the details for the requested player entry.</h1>
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "football_app:form_about" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "football_app:search_about" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "football_app:about" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Aboutinfo</caption>
+<tr>
+<th>Name</th>
+<th>Fifa id</th>
+<th>Debut</th>
+<th>Position</th>
+</tr>
+{% if player %}
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.fifaid }}</td>
+<td>{{ player.debut }}</td>
+<td>{{ player.position }}</td>
+</tr>
+{% endif %}
+</table> 	
+{% endblock %}
