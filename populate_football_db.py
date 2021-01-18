@@ -9,7 +9,7 @@ def add_entry(name,age,dob,nationality,birthplace,fifaid,debut,position,league,c
      height,weight,foot,matches,goals,assists,penaltyscored,penaltymissed,goalsconceded,
      yellowcards,redcards):     
 
-	t=cricket_db.objects.get_or_create(name=name,age=age,dob=dob,nationality=nationality,birthplace=birthplace,
+	t=football_db.objects.get_or_create(name=name,age=age,dob=dob,nationality=nationality,birthplace=birthplace,
           fifaid=fifaid,debut=debut,position=position,league=league,
           club=club,height=height,weight=weight,foot=foot,
           matches=matches,goals=goals,assists=assists,penaltyscored=penaltyscored,
@@ -60,7 +60,7 @@ for row in reader:
      nationality.append(row["Nationality"])
      birthplace.append(row["Birthplace"])
      fifaid.append(row["FIFA ID"])
-     debut.append(row["debut"])
+     debut.append(row["Debut"])
      position.append(row["Position"])
      league.append(row["League"])
      club.append(row["Club"])
