@@ -20,7 +20,7 @@ class football_db(models.Model):
    assists=models.CharField(max_length=512,null=True)
    penaltyscored=models.CharField(max_length=512,null=True)
    penaltymissed=models.CharField(max_length=512,null=True)
-   goalsconcedeed=models.CharField(max_length=512,null=True)
+   goalsconceded=models.CharField(max_length=512,null=True)
    yellowcards=models.CharField(max_length=512,null=True)
    redcards=models.CharField(max_length=512,null=True)
 
