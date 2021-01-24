@@ -2,17 +2,25 @@
 {% extends "base.html" %}
 {% block body_block %}
 <div class="row">
-<div class="column">	
+<div class="column">
+<p><a href={% url "music_app:home" %}>	
 <img src= "/static/images/music_image.jpg"  alt="music image" width=250 height=250>
+</a></p>
 </div>
 <div class="column">
+<p><a href={% url "books_app:home" %}>		
 <img src= "/static/images/books_image.jpg"  alt="books image" width=250 height=250>
+</a></p>
 </div>
 <div class="column">
+<p><a href={% url "cricket_app:home" %}>		
 <img src= "/static/images/cricket_image.jpg" alt="cricket image" width=250 height=250>
+</a></p>
 </div>
 <div class="column">
+<p><a href={% url "football_app:home" %}>		
 <img src="/static/images/football_image.jpg" alt="football image" width=250 height=250>
+</a></p>
 </div>
 </div>
 {% endblock %}
