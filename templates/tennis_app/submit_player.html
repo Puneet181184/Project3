@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "tennis_app/base.html" %}
+{% block body_block %}
+<h1>Player entry submitted successfully</h1>
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "tennis_app:form_player" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "tennis_app:player" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+{% endblock %}
