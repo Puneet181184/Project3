@@ -12,9 +12,15 @@ urlpatterns=[
   re_path(r'winstats/',views.winstats,name='winstats'),
   re_path(r'gamestats/',views.gamestats,name='gamestats'),
   re_path(r'form_p/',views.form_player,name='form_player'),
+  re_path(r'form_a/',views.form_about,name='form_about'),
+  re_path(r'form_d/',views.form_details,name='form_details'),
+  re_path(r'form_c/',views.form_careerstats,name='form_careerstats'),
+  re_path(r'form_po/',views.form_pointstats,name='form_pointstats'),
+  re_path(r'form_w/',views.form_winstats,name='form_winstats'),
+  re_path(r'form_g/',views.form_gamestats,name='form_gamestats'),
 
 
- ]
+]
   
 
 
