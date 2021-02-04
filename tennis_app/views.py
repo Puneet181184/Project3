@@ -132,7 +132,7 @@ def form_winstats(request):
          claywins=form.cleaned_data["claywins"]
          grasswins=form.cleaned_data["grasswins"]
          carpetwins=form.cleaned_data["carpetwins"]
-         defaults={"age":age,"dob":dob,"nationality":nationality}
+         defaults={"overallwins":overallwins,"hardwins":hardwins,"claywins":claywins,"grasswins":grasswins,"carpetwins":carpetwins}
          obj,created=tennis_db.objects.update_or_create(name=name,defaults=defaults)
          return render(request,"tennis_app/submit_winstats.html")
       else:
