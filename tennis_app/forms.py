@@ -36,4 +36,9 @@ class gamestatsform(forms.ModelForm):
          model=tennis_db
          fields=["name","games","aces","faults"]
 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=tennis_db
+         fields=["name"]            
+
                                              

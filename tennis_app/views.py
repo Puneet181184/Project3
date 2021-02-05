@@ -7,6 +7,8 @@ from tennis_app.forms import careerstatsform
 from tennis_app.forms import pointstatsform
 from tennis_app.forms import winstatsform
 from tennis_app.forms import gamestatsform
+from tennis_app.forms import searchform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"tennis_app/home.html")
@@ -154,6 +156,24 @@ def form_gamestats(request):
       else:
          print("error form invalid")      
     return render(request,"tennis_app/form_gamestats.html",{"form":form})
+
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=tennis_db.objects.get(name__iexact=name) 
+         except tennis_db.DoesNotExist:
+             return render(request,"tennis_app/error_player.html")
+         return render(request,"tennis_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"tennis_app/search_player.html",{"form":form})
+
+    
+
 
 
 
