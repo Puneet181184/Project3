@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "tennis_app/base.html" %}
+{% block body_block %}
+<h1>The player entry could not be found.</h1>
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "tennis_app:form_gamestats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "tennis_app:search_gamestats" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "tennis_app:gamestats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+{% endblock %}
+ 
