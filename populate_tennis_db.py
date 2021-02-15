@@ -69,7 +69,7 @@ for row in reader:
      seasons.append(row["Seasons"])
      height.append(row["Height in cm"])
      weight.append(row["Weight in kg"])
-     preferedhand.append(row["Preferred Hand"])
+     preferedhand.append(row["Prefered Hand"])
      titles.append(row["Titles"])
      grandslams.append(row["Grand Slams"])
      tourfinals.append(row["Tour Finals"])
@@ -78,9 +78,9 @@ for row in reader:
      totalpoints.append(row["Total Points"])
      tournamentpoints.append(row["Tournament Points"])
      rankingpoints.append(row["Ranking Points"])
-     overallwins.append(row["Win Overall"])
-     hardwins.append(row["Win Hard"])
-     claywins.append(row["Win Clay"])
+     overallwins.append(row["Win Overall (in %)"])
+     hardwins.append(row["Win Hard (in %)"])
+     claywins.append(row["Win Clay (in %)"])
      grasswins.append(row["Win Grass"])
      carpetwins.append(row["Win Carpet"])
      games.append(row["Games"])
@@ -92,12 +92,11 @@ for row in reader:
 
 #inserting values into the Table
 for i in range(0,len(name)):
-	add_entry(name[i],age[i],dob[i],nationality[i],birthplace[i],fifaid[i],debut[i],position[i],league[i],
-                  club[i],height[i],weight[i],foot[i],matches[i],goals[i],assists[i],
-                  penaltyscored[i],penaltymissed[i],goalsconceded[i],yellowcards[i],redcards[i])
-	
-
-
+	add_entry(name[i],age[i],dob[i],nationality[i],rank[i],debut[i],seasons[i],height[i],weight[i],
+                  preferedhand[i],titles[i],grandslams[i],tourfinals[i],masters[i],daviscups[i],totalpoints[i],
+                  tournamentpoints[i],rankingpoints[i],overallwins[i],hardwins[i],claywins[i],grasswins[i],
+                  carpetwins[i],games[i],aces[i],faults[i])
+	                                                                                                     
 
 
 
