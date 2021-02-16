@@ -36,13 +36,12 @@ padding-top:15px;
 padding-bottom:15px;	
 }
 .navbar{
-padding-top:15px;
-padding-bottom:15px;
+padding-top:0px;
+padding-bottom:0px;
 border:0;
 border-radius:0;
-margin-bottom:0;
-font-size:12px;
-letter-spacing:5px; 	
+margin-bottom:1rem;
+font-size:16px; 	
 }
 .navbar-nav li a:hover{
 color:#1abc9c !important;	
@@ -89,16 +88,20 @@ w3-hover-text-black w3-xxlarge"><i class="fa fa-home"></i></a>
 <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Contact us</a>
 </div>
 <div style="margin-left:10%">   
-<nav class="navbar navbar-default navbar-static-top">
-<div class="container">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container-fluid">
+<div class="navbar-header">
+<a class="navbar-brand" href={% url "main:main" %}>Encyclopedia</a>
+</div> 
 <ul class="nav navbar-nav">
-<li><a class="navbar-link" href={% url "tennis_app:player" %}>Players</a></li> 
-<li><a class="navbar-link" href={% url "tennis_app:about" %}>About</a></li> 
-<li><a class="navbar-link" href={% url "tennis_app:details" %}>Details</a></li>
-<li><a class="navbar-link" href={% url "tennis_app:careerstats" %}>Careerstats</a></li>
-<li><a class="navbar-link" href={% url "tennis_app:pointstats" %}>Pointstats</a></li>
-<li><a class="navbar-link" href={% url "tennis_app:winstats" %}>Winstats</a></li>
-<li><a class="navbar-link" href={% url "tennis_app:gamestats" %}>Gamestats</a></li> 
+<li><a class="nav-item nav-link active" href={% url "tennis_app:home" %}>Tennis Home</a></li>
+<li><a class="nav-item navbar-link" href={% url "tennis_app:player" %}>Players</a></li> 
+<li><a class="nav-item navbar-link" href={% url "tennis_app:about" %}>About</a></li> 
+<li><a class="nav-item navbar-link" href={% url "tennis_app:details" %}>Details</a></li>
+<li><a class="nav-item navbar-link" href={% url "tennis_app:careerstats" %}>Careerstats</a></li>
+<li><a class="nav-item navbar-link" href={% url "tennis_app:pointstats" %}>Pointstats</a></li>
+<li><a class="nav-item navbar-link" href={% url "tennis_app:winstats" %}>Winstats</a></li>
+<li><a class="nav-item navbar-link" href={% url "tennis_app:gamestats" %}>Gamestats</a></li> 
 
 
 
