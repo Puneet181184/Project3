@@ -36,13 +36,12 @@ padding-top:15px;
 padding-bottom:15px;	
 }
 .navbar{
-padding-top:15px;
-padding-bottom:15px;
+padding-top:0px;
+padding-bottom:0px;
 border:0;
 border-radius:0;
-margin-bottom:0;
-font-size:12px;
-letter-spacing:5px; 	
+margin-bottom:1rem;
+font-size:16px; 	
 }
 .navbar-nav li a:hover{
 color:#1abc9c !important;	
@@ -82,6 +81,9 @@ w3-hover-text-black w3-xxlarge"><i class="fa fa-home"></i></a>
 <div style="margin-left:10%">	
 <nav class="navbar navbar-default navbar-static-top">
 <div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href={% url "main:main" %}>Encyclopedia</a>
+</div> 	
 <ul class="nav navbar-nav">
 <li> <a class="navbar-link" href={% url "music_app:track" %}>Track</a></li>
 <li> <a class="navbar-link" href={% url "music_app:artist" %}>Artist</a></li>
