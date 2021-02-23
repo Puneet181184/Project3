@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends "chess_app/base.html" %}
+{% block body_block %}
+<h1>Click on the navigation buttons above to access the details.</h1>
+<div class="column">
+<p><a href={% url "chess_app:home" %}>		
+<img src="/static/images/chess_image.jpg" alt="chess image" width=250 height=250>
+</a></p>
+</div>
+{% endblock %}
