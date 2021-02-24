@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'cricket_app',
     'football_app',
     'tennis_app',
+    'chess_app',
 ]
 
 MIDDLEWARE = [
