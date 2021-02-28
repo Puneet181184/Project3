@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends "chess_app/base.html" %}
+{% block body_block %}
+<h1>This page has the games and score details for all players.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">	
+<li> <a class="navbar-link" href={% url "chess_app:gamestats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Gamestatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Games</th>
+<th>Wins</th>
+<th>Draws</th>
+<th>Losses</th>
+<th>Score</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.games }}</td>
+<td>{{ entry.wins }}</td>
+<td>{{ entry.draws }}</td>
+<td>{{ entry.losses }}</td>
+<td>{{ entry.score }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
