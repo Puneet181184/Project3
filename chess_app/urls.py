@@ -10,6 +10,7 @@ urlpatterns=[
   re_path(r'personalstats/',views.personalstats,name='personalstats'),
   re_path(r'ratingstats/',views.ratingstats,name='ratingstats'),
   re_path(r'gamestats/',views.gamestats,name='gamestats'),
+  re_path(r'form_p/',views.form_player,name='form_player'),
 
   
 
