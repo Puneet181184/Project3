@@ -11,8 +11,10 @@ urlpatterns=[
   re_path(r'ratingstats/',views.ratingstats,name='ratingstats'),
   re_path(r'gamestats/',views.gamestats,name='gamestats'),
   re_path(r'form_p/',views.form_player,name='form_player'),
-
-  
-
+  re_path(r'form_a/',views.form_about,name='form_about'),
+  re_path(r'form_d/',views.form_details,name='form_details'),
+  re_path(r'form_pe/',views.form_personalstats,name='form_personalstats'),
+  re_path(r'form_r/',views.form_ratingstats,name='form_ratingstats'),
+  re_path(r'form_g/',views.form_gamestats,name='form_gamestats'),
 
 ]  
