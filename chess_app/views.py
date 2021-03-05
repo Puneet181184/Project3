@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from chess_app.models import chess_db
 from chess_app.forms import playerform
+from chess_app.forms import aboutform
+from chess_app.forms import detailsform
+from chess_app.forms import personalstatsform
+from chess_app.forms import ratingstatsform
+from chess_app.forms import gamestatsform
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -82,7 +87,7 @@ def form_personalstats(request):
          title=form.cleaned_data["title"]
          playerid=form.cleaned_data["playerid"]
          gender=form.cleaned_data["gender"]
-         defaults={"title":age,"playerid":playerid,"gender":gender}
+         defaults={"title":title,"playerid":playerid,"gender":gender}
          obj,created=chess_db.objects.update_or_create(name=name,defaults=defaults)
          return render(request,"chess_app/submit_personalstats.html")
       else:

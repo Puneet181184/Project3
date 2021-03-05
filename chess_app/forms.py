@@ -8,21 +8,21 @@ class playerform(forms.ModelForm):
 class aboutform(forms.ModelForm):
       class Meta():
          model=chess_db
-         fields=["rank","debut"]
+         fields=["name","rank","debut"]
 class detailsform(forms.ModelForm):
       class Meta():
          model=chess_db
-         fields=["height","weight"] 
+         fields=["name","height","weight"] 
 class personalstatsform(forms.ModelForm):
       class Meta():
          model=chess_db
-         fields=["title","playerid","gender"]
+         fields=["name","title","playerid","gender"]
 class ratingstatsform(forms.ModelForm):
       class Meta():
          model=chess_db
-         fields=["stdrating","rapidrating","blitzrating"]
+         fields=["name","stdrating","rapidrating","blitzrating"]
 class gamestatsform(forms.ModelForm):
       class Meta():
          model=chess_db
-         fields=["games","wins","draws","losses","score"]                                   
+         fields=["name","games","wins","draws","losses","score"]                                   
          
