@@ -24,5 +24,9 @@ class ratingstatsform(forms.ModelForm):
 class gamestatsform(forms.ModelForm):
       class Meta():
          model=chess_db
-         fields=["name","games","wins","draws","losses","score"]                                   
+         fields=["name","games","wins","draws","losses","score"]
+class searchform(forms.ModelForm):
+      class Meta():
+         model=chess_db
+         fields=["name"]                                                
          

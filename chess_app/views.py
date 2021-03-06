@@ -6,6 +6,8 @@ from chess_app.forms import detailsform
 from chess_app.forms import personalstatsform
 from chess_app.forms import ratingstatsform
 from chess_app.forms import gamestatsform
+from chess_app.forms import searchform
+
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -124,4 +126,19 @@ def form_gamestats(request):
          return render(request,"chess_app/submit_gamestats.html")
       else:
          print("error form invalid")      
-    return render(request,"chess_app/form_gamestats.html",{"form":form})                 	    		
+    return render(request,"chess_app/form_gamestats.html",{"form":form}) 
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=chess_db.objects.get(name__iexact=name) 
+         except chess_db.DoesNotExist:
+             return render(request,"chess_app/error_player.html")
+         return render(request,"chess_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"chess_app/search_player.html",{"form":form})
+
