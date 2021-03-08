@@ -142,3 +142,75 @@ def search_player(request):
          print(" error form invalid")
     return render(request,"chess_app/search_player.html",{"form":form})
 
+def search_about(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=chess_db.objects.get(name__iexact=name) 
+         except chess_db.DoesNotExist:
+             return render(request,"chess_app/error_about.html")
+         return render(request,"chess_app/result_about.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"chess_app/search_about.html",{"form":form})
+def search_details(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=chess_db.objects.get(name__iexact=name) 
+         except chess_db.DoesNotExist:
+             return render(request,"chess_app/error_details.html")
+         return render(request,"chess_app/result_details.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"chess_app/search_details.html",{"form":form}) 
+def search_personalstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=chess_db.objects.get(name__iexact=name) 
+         except chess_db.DoesNotExist:
+             return render(request,"chess_app/error_personalstats.html")
+         return render(request,"chess_app/result_personalstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"chess_app/search_personalstats.html",{"form":form})
+def search_ratingstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=chess_db.objects.get(name__iexact=name) 
+         except chess_db.DoesNotExist:
+             return render(request,"chess_app/error_ratingstats.html")
+         return render(request,"chess_app/result_ratingstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"chess_app/search_ratingstats.html",{"form":form})  
+def search_gamestats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=chess_db.objects.get(name__iexact=name) 
+         except chess_db.DoesNotExist:
+             return render(request,"chess_app/error_gamestats.html")
+         return render(request,"chess_app/result_gamestats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"chess_app/search_gamestats.html",{"form":form}) 
+                    
+
