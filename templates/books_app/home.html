@@ -2,9 +2,26 @@
 {% extends "books_app/base.html" %}
 {% block body_block %}
 <h1>Click on the navigation buttons above to access the details.</h1>
+<div class="row">
 <div class="column">
 <p><a href={% url "books_app:home" %}>		
-<img src= "/static/images/books_image.jpg"  alt="books image" width=250 height=250>
+<img src= "/static/images/books_image1.jpg"  alt="books image" width=250 height=250>
 </a></p>
+</div>
+<div class="column">
+<p><a href={% url "books_app:home" %}>		
+<img src= "/static/images/books_image2.jpg"  alt="books image" width=250 height=250>
+</a></p>
+</div>
+<div class="column">
+<p><a href={% url "books_app:home" %}>		
+<img src= "/static/images/books_image3.jpg"  alt="books image" width=250 height=250>
+</a></p>
+</div>
+<div class="column">
+<p><a href={% url "books_app:home" %}>		
+<img src= "/static/images/books_image4.jpg"  alt="books image" width=250 height=250>
+</a></p>
+</div>
 </div>
 {% endblock %}
