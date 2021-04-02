@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from basketball_app.models import basketball_db
 from basketball_app.forms import playerform
-
+from basketball_app.forms import aboutform
+from basketball_app.forms import detailsform
+from basketball_app.forms import gamestatsform
+from basketball_app.forms import goalstatsform
+from basketball_app.forms import pointstatsform
+from basketball_app.forms import blockstatsform
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
