@@ -28,4 +28,8 @@ class pointstatsform(forms.ModelForm):
 class blockstatsform(forms.ModelForm):
       class Meta():
          model=basketball_db
-         fields=["name","blocks","freethrows","rebounds","fouls"]                                                
+         fields=["name","blocks","freethrows","rebounds","fouls"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=basketball_db
+         fields=["name"]                                                
