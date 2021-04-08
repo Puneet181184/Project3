@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "basketball_app/base.html" %}
+{% block body_block %}
+<h1>Please find the details for the requested player entry.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "basketball_app:form_goalstats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "basketball_app:search_goalstats" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "basketball_app:goalstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Goalstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Goals</th>
+<th>Attempts</th>
+<th>Assists</th>
+<th>Steals</th>
+</tr>
+{% if player %}
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.goals }}</td>
+<td>{{ player.attempts }}</td>
+<td>{{ player.assists }}</td>
+<td>{{ player.steals }}</td>
+</tr>
+{% endif %}
+</table> 	
+{% endblock %}
