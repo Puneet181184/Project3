@@ -9,7 +9,7 @@ def add_entry(name,age,dob,nationality,college,position,height,weight,
      preferedhand,games,gamestarted,minutes,goals,attempts,assists,steals,
      points,threepoints,twopoints,blocks,freethrows,rebounds,fouls):     
 
-	t=chess_db.objects.get_or_create(name=name,age=age,dob=dob,nationality=nationality,college=college,
+	t=basketball_db.objects.get_or_create(name=name,age=age,dob=dob,nationality=nationality,college=college,
           position=position,height=height,weight=weight,
           preferedhand=preferedhand,games=games,gamestarted=gamestarted,
           minutes=minutes,goals=goals,attempts=attempts,assists=assists,
@@ -61,7 +61,7 @@ for row in reader:
      dob.append(row["Date of Birth"])
      nationality.append(row["Nationality"])
      college.append(row["College"])
-     position.append(row["position"])
+     position.append(row["Position"])
      height.append(row["Height in cm"])
      weight.append(row["Weight in kg"])
      preferedhand.append(row["Prefered Hand"])
@@ -85,9 +85,9 @@ for row in reader:
 
 #inserting values into the Table
 for i in range(0,len(name)):
-	add_entry(name[i],age[i],dob[i],nationality[i],rank[i],debut[i],height[i],weight[i],
-                  title[i],playerid[i],gender[i],stdrating[i],rapidrating[i],blitzrating[i],
-                  games[i],wins[i],draws[i],losses[i],score[i])
+	add_entry(name[i],age[i],dob[i],nationality[i],college[i],position[i],height[i],weight[i],
+                  preferedhand[i],games[i],gamestarted[i],minutes[i],goals[i],attempts[i],
+                  assists[i],steals[i],points[i],threepoints[i],twopoints[i],blocks[i],freethrows[i],rebounds[i],fouls[i])
 	                                                                                                     
 
 
