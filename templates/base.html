@@ -94,15 +94,14 @@ w3-hover-text-black w3-xxlarge"><i class="fa fa-home"></i></a>
    
 <div class="container-fluid bg-1 text-center">
 <h3 class="margin">Welcome to the Encyclopedia of Musictracks, Books and Sports.</h3>	
-<p> Browse details for Hundreds of Musictracks, Books and Sports. You can also add new entries
- to the data base and search for an existing entry.</p>
+
 </div>
  <div class="container-fluid bg-2 text-center">
    {% block body_block %}
    {% endblock %}
    </div>
 <footer class="container-fluid bg-1 text-center">
-<p><a href="#">Contact us</a></p>
+<p><a href={% url "main:contactus" %}>Contact us</a></p>
 </footer>
 </div>
 </body>
