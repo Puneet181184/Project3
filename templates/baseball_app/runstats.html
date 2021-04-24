@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends "baseball_app/base.html" %}
+{% block body_block %}
+<h1>This page has the runs and hits details for all players.</h1>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "baseball_app:runstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Runstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Runs</th>
+<th>Hits</th>
+<th>Doubles</th>
+<th>Triples</th>
+<th>Homeruns</th>
+<th>Runsbatted</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.runs }}</td>
+<td>{{ entry.hits }}</td>
+<td>{{ entry.doubles }}</td>
+<td>{{ entry.triples }}</td>
+<td>{{ entry.homeruns }}</td>
+<td>{{ entry.runsbatted }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
