@@ -48,7 +48,110 @@ def form_player(request):
       else:
          print("error form invalid")      
     return render(request,"baseball_app/form_player.html",{"form":form})     		
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         college=form.cleaned_data["college"]
+         team=form.cleaned_data["team"]
+         position=form.cleaned_data["position"]
+         defaults={"college":college,"team":team,"position":position}
+         obj,created=baseball_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"baseball_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"baseball_app/form_about.html",{"form":form})   
+def form_details(request):
+    form=detailsform()
+    if request.method=="POST":
+      form=detailsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         debut=form.cleaned_data["debut"]
+         height=form.cleaned_data["height"]
+         weight=form.cleaned_data["weight"]
+         defaults={"debut":debut,"height":height,"weight":weight}
+         obj,created=baseball_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"baseball_app/submit_details.html")
+      else:
+         print("error form invalid")      
+    return render(request,"baseball_app/form_details.html",{"form":form}) 
+def form_gamestats(request):
+    form=gamestatsform()
+    if request.method=="POST":
+      form=gamestatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         games=form.cleaned_data["games"]
+         appearances=form.cleaned_data["appearances"]
+         atbats=form.cleaned_data["atbats"]
+         defaults={"games":games,"appearances":appearances,"atbats":atbats}
+         obj,created=baseball_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"baseball_app/submit_gamestats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"baseball_app/form_gamestats.html",{"form":form})     		
+def form_runstats(request):
+    form=runstatsform()
+    if request.method=="POST":
+      form=runstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         runs=form.cleaned_data["runs"]
+         hits=form.cleaned_data["hits"]
+         doubles=form.cleaned_data["doubles"]
+         triples=form.cleaned_data["triples"]
+         homeruns=form.cleaned_data["homeruns"]
+         runsbatted=form.cleaned_data["runsbatted"]
+         defaults={"runs":runs,"hits":hits,"doubles":doubles,"triples":triples,"homeruns":homeruns,"runsbatted":runsbatted}
+         obj,created=baseball_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"baseball_app/submit_runstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"baseball_app/form_runstats.html",{"form":form}) 
+def form_strikestats(request):
+    form=strikestatsform()
+    if request.method=="POST":
+      form=strikestatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         steals=form.cleaned_data["steals"]
+         walks=form.cleaned_data["walks"]
+         strikeouts=form.cleaned_data["strikeouts"]
+         defaults={"steals":steals,"walks":walks,"strikeouts":strikeouts}
+         obj,created=baseball_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"baseball_app/submit_strikestats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"baseball_app/form_strikestats.html",{"form":form})
+def form_basestats(request):
+    form=basestatsform()
+    if request.method=="POST":
+      form=basestatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         stolenbases=form.cleaned_data["stolenbases"]
+         caughtstealing=form.cleaned_data["caughtstealing"]
+         totalbases=form.cleaned_data["totalbases"]
+         defaults={"stolenbases":stolenbases,"caughtstealing":caughtstealing,"totalbases"totalbases:}
+         obj,created=baseball_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"baseball_app/submit_basesats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"baseball_app/form_basestats.html",{"form":form})     		
 
+
+
+
+
+    		    		    		    		    		    		
+
+
+
+
+    		    		    		    		    		    		
     		    		    		    		    		    		
 
 
