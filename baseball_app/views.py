@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from baseball_app.models import baseball_db
 from baseball_app.forms import playerform
+from baseball_app.forms import aboutform
+from baseball_app.forms import detailsform
+from baseball_app.forms import gamestatsform
+from baseball_app.forms import runstatsform
+from baseball_app.forms import strikestatsform
+from baseball_app.forms import basestatsform
+
 
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -135,9 +142,9 @@ def form_basestats(request):
          stolenbases=form.cleaned_data["stolenbases"]
          caughtstealing=form.cleaned_data["caughtstealing"]
          totalbases=form.cleaned_data["totalbases"]
-         defaults={"stolenbases":stolenbases,"caughtstealing":caughtstealing,"totalbases"totalbases:}
+         defaults={"stolenbases":stolenbases,"caughtstealing":caughtstealing,"totalbases":totalbases}
          obj,created=baseball_db.objects.update_or_create(name=name,defaults=defaults)
-         return render(request,"baseball_app/submit_basesats.html")
+         return render(request,"baseball_app/submit_basestats.html")
       else:
          print("error form invalid")      
     return render(request,"baseball_app/form_basestats.html",{"form":form})     		
