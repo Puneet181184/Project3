@@ -7,7 +7,7 @@ from baseball_app.forms import gamestatsform
 from baseball_app.forms import runstatsform
 from baseball_app.forms import strikestatsform
 from baseball_app.forms import basestatsform
-
+from baseball_app.forms import searchform
 
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -147,7 +147,23 @@ def form_basestats(request):
          return render(request,"baseball_app/submit_basestats.html")
       else:
          print("error form invalid")      
-    return render(request,"baseball_app/form_basestats.html",{"form":form})     		
+    return render(request,"baseball_app/form_basestats.html",{"form":form})   
+
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=baseball_db.objects.get(name__iexact=name) 
+         except baseball_db.DoesNotExist:
+             return render(request,"baseball_app/error_player.html")
+         return render(request,"baseball_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"baseball_app/search_player.html",{"form":form})    
+
 
 
 

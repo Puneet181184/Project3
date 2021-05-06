@@ -28,4 +28,8 @@ class strikestatsform(forms.ModelForm):
 class basestatsform(forms.ModelForm):
       class Meta():
          model=baseball_db
-         fields=["name","stolenbases","caughtstealing","totalbases"]                                                   
+         fields=["name","stolenbases","caughtstealing","totalbases"]  
+class searchform(forms.ModelForm):
+      class Meta():
+         model=baseball_db
+         fields=["name"]                                                                 
