@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends "baseball_app/base.html" %}
 {% block body_block %}
-<h1>Please find the details for the requested player entry.</h1>
+<h1>The player entry could not be found.</h1>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
 <div class="container">
 <ul class="nav navbar-nav">
@@ -10,22 +10,6 @@
 <li> <a class="navbar-link" href={% url "baseball_app:strikestats" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav>
-<table>
-<caption>Strikestatsinfo</caption>
-<tr>
-<th>Name</th>
-<th>Steals</th>
-<th>Walks</th>
-<th>Strikeouts</th>
-</tr>
-{% if player %}
-<tr>
-<td>{{ player.name }}</td>
-<td>{{ player.steals }}</td>
-<td>{{ player.walks }}</td>
-<td>{{ player.strikeouts }}</td>
-</tr>
-{% endif %}
-</table> 	
+</nav> 	
 {% endblock %}
+ 
