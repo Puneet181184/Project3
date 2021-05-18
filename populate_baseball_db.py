@@ -72,7 +72,7 @@ for row in reader:
      atbats.append(row["At bats"])
      runs.append(row["Runs"])
      hits.append(row["Hits"])
-     doubles.append(row["doubles"])
+     doubles.append(row["Doubles"])
      triples.append(row["Triples"])
      homeruns.append(row["Home Runs"])
      runsbatted.append(row["Runs Batted"])
@@ -88,9 +88,10 @@ for row in reader:
 
 #inserting values into the Table
 for i in range(0,len(name)):
-	add_entry(name[i],age[i],dob[i],nationality[i],college[i],position[i],height[i],weight[i],
-                  preferedhand[i],games[i],gamestarted[i],minutes[i],goals[i],attempts[i],
-                  assists[i],steals[i],points[i],threepoints[i],twopoints[i],blocks[i],freethrows[i],rebounds[i],fouls[i])
+	add_entry(name[i],age[i],dob[i],nationality[i],college[i],team[i],position[i],debut[i],height[i],weight[i],
+                  games[i],appearances[i],atbats[i],runs[i],hits[i],
+                  doubles[i],triples[i],homeruns[i],runsbatted[i],steals[i],walks[i],strikeouts[i],stolenbases[i],caughtstealing[i],
+                  totalbases[i])
 	                                                                                                     
 
 
