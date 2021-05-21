@@ -4,3 +4,8 @@ from django.shortcuts import render
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"rugby_app/home.html")
+def player(request):
+    players_list=rugby_db.objects.order_by("name")
+    rugby_dict={"player":players_list}
+    return render(request,"rugby_app/player.html",context=rugby_dict)			
+	
