@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from rugby_app.models import rugby_db
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
