@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "rugby_app/base.html" %}
+{% block body_block %}
+<h1>This page has the point details for all players.</h1>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">	
+<li> <a class="navbar-link" href={% url "rugby_app:pointstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Pointstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Points</th>
+<th>Tries</th>
+<th>Drops</th>
+<th>Penalties</th>
+<th>Convertions</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.points }}</td>
+<td>{{ entry.tries }}</td>
+<td>{{ entry.drops }}</td>
+<td>{{ entry.penalties }}</td>
+<td>{{ entry.convertions }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
