@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from rugby_app.models import rugby_db
 from rugby_app.forms import playerform
+from rugby_app.forms import aboutform
+from rugby_app.forms import detailsform
+from rugby_app.forms import matchstatsform
+from rugby_app.forms import gamestatsform
+from rugby_app.forms import pointstatsform
+from rugby_app.forms import cardstatsform
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -57,7 +63,7 @@ def form_about(request):
          name=form.cleaned_data["name"]
          team=form.cleaned_data["team"]
          position=form.cleaned_data["position"]
-         defaults={"team":team,"position"position}
+         defaults={"team":team,"position":position}
          obj,created=rugby_db.objects.update_or_create(name=name,defaults=defaults)
          return render(request,"rugby_app/submit_about.html")
       else:
