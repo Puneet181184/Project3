@@ -92,7 +92,7 @@ def form_matchstats(request):
          name=form.cleaned_data["name"]
          matches=form.cleaned_data["matches"]
          wins=form.cleaned_data["wins"]
-         draws=form.cleaned_data["drwas"]
+         draws=form.cleaned_data["draws"]
          losses=form.cleaned_data["losses"]
          defaults={"matches":matches,"wins":wins,"draws":draws,"losses":losses}
          obj,created=rugby_db.objects.update_or_create(name=name,defaults=defaults)
