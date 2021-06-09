@@ -28,4 +28,8 @@ class pointstatsform(forms.ModelForm):
 class cardstatsform(forms.ModelForm):
       class Meta():
          model=rugby_db
-         fields=["name","yellowcards","redcards"]         
+         fields=["name","yellowcards","redcards"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=rugby_db
+         fields=["name"]                               

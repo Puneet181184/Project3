@@ -7,6 +7,8 @@ from rugby_app.forms import matchstatsform
 from rugby_app.forms import gamestatsform
 from rugby_app.forms import pointstatsform
 from rugby_app.forms import cardstatsform
+from rugby_app.forms import searchform
+
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -144,7 +146,22 @@ def form_cardstats(request):
          return render(request,"rugby_app/submit_cardstats.html")
       else:
          print("error form invalid")  
-    return render(request,"rugby_app/form_cardstats.html",{"form":form}) 
+    return render(request,"rugby_app/form_cardstats.html",{"form":form})
+
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=rugby_db.objects.get(name__iexact=name) 
+         except rugby_db.DoesNotExist:
+             return render(request,"rugby_app/error_player.html")
+         return render(request,"rugby_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"rugby_app/search_player.html",{"form":form})     
 
 
 
