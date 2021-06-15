@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "rugby_app/base.html" %}
+{% block body_block %}
+<h1>Please find the details for the requested player entry.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "rugby_app:form_cardstats" %}>Enter new entry</a></li>
+
+<li> <a class="navbar-link" href={% url "rugby_app:cardstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Cardstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Yellowcards</th>
+<th>Redcards</th>
+</tr>
+{% if player %}
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.yellowcards }}</td>
+<td>{{ player.redcards }}</td>
+</tr>
+{% endif %}
+</table> 	
+{% endblock %}
