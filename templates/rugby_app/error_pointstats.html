@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends "rugby_app/base.html" %}
 {% block body_block %}
-<h1>Please find the details for the requested player entry.</h1>
+<h1>The player entry could not be found.</h1>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
 <div class="container">
 <ul class="nav navbar-nav">
@@ -10,26 +10,6 @@
 <li> <a class="navbar-link" href={% url "rugby_app:pointstats" %}>Go back to list</a></li>
 </ul>
 </div>
-</nav>
-<table>
-<caption>Pointstatsinfo</caption>
-<tr>
-<th>Name</th>
-<th>Points</th>
-<th>Tries</th>
-<th>Drops</th>
-<th>Penalties</th>
-<th>Conversions</th>
-</tr>
-{% if player %}
-<tr>
-<td>{{ player.name }}</td>
-<td>{{ player.points }}</td>
-<td>{{ player.tries }}</td>
-<td>{{ player.drops }}</td>
-<td>{{ player.penalties }}</td>
-<td>{{ player.conversions }}</td>
-</tr>
-{% endif %}
-</table> 	
+</nav> 	
 {% endblock %}
+ 
