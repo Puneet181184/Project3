@@ -2,7 +2,7 @@
 {% load static %}
 <html>
 <head>
-   <title>Music site</title>
+   <title>Icehockey site</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,11 +29,11 @@ color:#ffffff;
 }
 .bg-2{
 background-color:white;
-color:black;
+color:black; 	
 }
 .container-fluid{
 padding-top:15px;
-padding-bottom:15px;	
+padding-bottom:15px;		
 }
 .navbar{
 padding-top:0px;
@@ -41,7 +41,7 @@ padding-bottom:0px;
 border:0;
 border-radius:0;
 margin-bottom:1rem;
-font-size:16px; 	
+font-size:16px; 
 }
 .navbar-nav li a:hover{
 color:#1abc9c !important;	
@@ -67,13 +67,21 @@ color:black;
 .column{
 float:left;
 width:25%;
-padding:5px;	
+padding:5px;   
 }
 .row::after{
 content:"";
 clear:both;
-display:table;	
+display:table; 
 }
+
+
+
+
+
+
+
+
 </style>
 </head>
 <body>
@@ -92,28 +100,34 @@ w3-hover-text-black w3-xxlarge"><i class="fa fa-home"></i></a>
 <a href={% url "icehockey_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Icehockey</a>
 
 <a href={% url "main:contactus" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Contact us</a>
+
 </div>
-<div style="margin-left:10%">	
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div style="margin-left:10%">   
+<nav class="navbar navbar-expand-lg  navbar navbar-dark bg-primary">
 <div class="container-fluid">
 <div class="navbar-header">
 <a class="navbar-brand" href={% url "main:main" %}>Encyclopedia</a>
-</div> 	
+</div>   
 <ul class="nav navbar-nav">
-<li> <a class="navbar-link nav-item active" href={% url "music_app:home" %}>Music Home</a></li>	
-<li> <a class="navbar-link nav-item" href={% url "music_app:track" %}>Track</a></li>
-<li> <a class="navbar-link nav-item" href={% url "music_app:artist" %}>Artist</a></li>
-<li> <a class="navbar-link nav-item" href={% url "music_app:ascap" %}>Ascap</a></li>
-<li> <a class="navbar-link nav-item" href={% url "music_app:bmi" %}>Bmi</a></li>
-<li> <a class="navbar-link nav-item" href={% url "music_app:codes" %}>Codes</a></li>
-<li> <a class="navbar-link nav-item" href={% url "music_app:gmr" %}>Gmr</a></li>
-<li> <a class="navbar-link nav-item" href={% url "music_app:sesac" %}>Sesac</a></li>
+<li><a class="navbar-link nav-item active" href={% url "icehockey_app:home" %}>Icehockey Home</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</ul>
+</ul>
+</ul>
 </ul>
 </div>
 </nav>
 <div class="container-fluid bg-1 text-center">
-<h3 class="margin">Welcome to the best collection of music tracks.</h3>	
-<p> Browse artist name,isni codes,album names,gmr codes and bmi codes for Hundreds of tracks. You can also add new entries to the data base and search for an existing entry.</p>
+<h3 class="margin">Welcome to the best collection of icehockey players.</h3>	
+<p> Browse details for Hundreds of players. You can also add new entries to the data base and search for an existing entry.</p>
 </div>
  <div class="container-fluid bg-2 text-center">
    {% block body_block %}
