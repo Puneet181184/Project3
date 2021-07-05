@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "icehockey_app/base.html" %}
+{% block body_block %}
+<h1>This page has the points details for all players.</h1>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">		
+<li> <a class="navbar-link" href={% url "icehockey_app:pointstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Pointstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Points</th>
+<th>Powerplaypoints</th>
+<th>Shothandpoints</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.points }}</td>
+<td>{{ entry.powerplaypoints }}</td>
+<td>{{ entry.shothandpoints }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
