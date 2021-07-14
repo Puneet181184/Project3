@@ -105,7 +105,7 @@ def form_goalstats(request):
          goals=form.cleaned_data["goals"]
          powerplaygoals=form.cleaned_data["powerplaygoals"]
          shorthandgoals=form.cleaned_data["shorthandgoals"]
-         winingggoals=form.cleaned_data["winingggoals"]
+         wininggoals=form.cleaned_data["wininggoals"]
          overtimegoals=form.cleaned_data["overtimegoals"]
          defaults={"goals":goals,"powerplaygoals":powerplaygoals,"shorthandgoals":shorthandgoals,"wininggoals":wininggoals
          ,"overtimegoals":overtimegoals}
