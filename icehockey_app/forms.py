@@ -28,4 +28,8 @@ class pointstatsform(forms.ModelForm):
 class shotstatsform(forms.ModelForm):
       class Meta():
          model=icehockey_db
-         fields=["name","shots","shotspercentage","penaltyminutes","winspercentage"]                 
+         fields=["name","shots","shotspercentage","penaltyminutes","winspercentage"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=icehockey_db
+         fields=["name"]                            

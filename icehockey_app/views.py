@@ -7,6 +7,8 @@ from icehockey_app.forms import gamestatsform
 from icehockey_app.forms import goalstatsform
 from icehockey_app.forms import pointstatsform
 from icehockey_app.forms import shotstatsform
+from icehockey_app.forms import searchform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"icehockey_app/home.html")
@@ -145,6 +147,21 @@ def form_shotstats(request):
       else:
          print("error form invalid")      
     return render(request,"icehockey_app/form_shotstats.html",{"form":form})
+
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=icehockey_db.objects.get(name__iexact=name) 
+         except icehockey_db.DoesNotExist:
+             return render(request,"icehockey_app/error_player.html")
+         return render(request,"icehockey_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"icehockey_app/search_player.html",{"form":form})    
 
 
 
