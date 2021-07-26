@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "tennis_app/base.html" %}
+{% block body_block %}
+<h1>This page has the totalpoints and tournamentpoints details for all players.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "tennis_app:form_pointstats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "tennis_app:search_pointstats" %}>Search an entry</a></li>	
+<li> <a class="navbar-link" href={% url "tennis_app:pointstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Pointstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Total points</th>
+<th>Tournament points</th>
+<th>Ranking points</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.totalpoints }}</td>
+<td>{{ entry.tournamentpoints }}</td>
+<td>{{ entry.rankingpoints }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}

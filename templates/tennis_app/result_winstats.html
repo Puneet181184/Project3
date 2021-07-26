@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends "tennis_app/base.html" %}
+{% block body_block %}
+<h1>Please find the details for the requested player entry.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "tennis_app:form_winstats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "tennis_app:search_winstats" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "tennis_app:winstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Winstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Overall wins</th>
+<th>Hard wins</th>
+<th>Clay wins</th>
+<th>Grass wins</th>
+<th>Carpet wins</th>
+</tr>
+{% if player %}
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.overallwins }}</td>
+<td>{{ player.hardwins }}</td>
+<td>{{ player.claywins }}</td>
+<td>{{ player.grasswins }}</td>
+<td>{{ player.carpetwins }}</td>
+</tr>
+{% endif %}
+</table> 	
+{% endblock %}
