@@ -29,6 +29,8 @@ urlpatterns = [
     path("baseball_app",include("baseball_app.urls")),
     path("rugby_app",include("rugby_app.urls")),
     path("icehockey_app",include("icehockey_app.urls")),
+    path("golf_app",include("golf_app.urls")),
+
 
 
 
