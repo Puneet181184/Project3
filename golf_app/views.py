@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from golf_app.models import golf_db
 from golf_app.forms import playerform
+from golf_app.forms import aboutform
+from golf_app.forms import detailsform
+from golf_app.forms import gamestatsform
+from golf_app.forms import positionstatsform
+from golf_app.forms import pointstatsform
+from golf_app.forms import searchform
+
 # Create your views here.
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -119,7 +126,20 @@ def form_pointstats(request):
       else:
          print("error form invalid")      
     return render(request,"golf_app/form_pointstats.html",{"form":form})             
-
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=golf_db.objects.get(name__iexact=name) 
+         except golf_db.DoesNotExist:
+             return render(request,"golf_app/error_player.html")
+         return render(request,"golf_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"golf_app/search_player.html",{"form":form})  
 
 
 

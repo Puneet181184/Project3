@@ -24,6 +24,10 @@ class positionstatsform(forms.ModelForm):
 class pointstatsform(forms.ModelForm):
       class Meta():
          model=golf_db
-         fields=["name","totalpoints","averagepoints","divisor"]                                            
+         fields=["name","totalpoints","averagepoints","divisor"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=golf_db
+         fields=["name"]                                                         
 
 
