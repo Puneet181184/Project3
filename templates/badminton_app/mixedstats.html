@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "badminton_app/base.html" %}
+{% block body_block %}
+<h1>This page has the mixed details for all players.</h1>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">		
+<li> <a class="navbar-link" href={% url "badminton_app:mixedstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Mixedstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Mixed played</th>
+<th>Mixed won</th>
+<th>mixed lost</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.mixedplayed }}</td>
+<td>{{ entry.mixedwon }}</td>
+<td>{{ entry.mixedlost }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
