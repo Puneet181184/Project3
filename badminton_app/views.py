@@ -14,7 +14,7 @@ def about(request):
 def details(request):
     players_list=badminton_db.objects.order_by("name")
     badminton_dict={"player":players_list}
-    return render(request,"badminton_app/detailsr.html",context=badminton_dict)
+    return render(request,"badminton_app/details.html",context=badminton_dict)
 def careerstats(request):
     players_list=badminton_db.objects.order_by("name")
     badminton_dict={"player":players_list}
@@ -30,4 +30,4 @@ def doublesstats(request):
 def mixedstats(request):
     players_list=badminton_db.objects.order_by("name")
     badminton_dict={"player":players_list}
-    return render(request,"badminton_app/mixedstatsstats.html",context=badminton_dict)               
+    return render(request,"badminton_app/mixedstats.html",context=badminton_dict)               
