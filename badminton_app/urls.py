@@ -11,6 +11,6 @@ urlpatterns=[
   re_path(r'singlesstats/',views.singlesstats,name='singlesstats'),
   re_path(r'doublesstats/',views.doublesstats,name='doublesstats'),
   re_path(r'mixedstats/',views.mixedstats,name='mixedstats'),
-
+  re_path(r'form_p/',views.form_player,name='form_player'),
 
  ]
