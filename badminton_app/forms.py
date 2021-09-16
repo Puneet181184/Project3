@@ -29,4 +29,8 @@ class mixedstatsform(forms.ModelForm):
       class Meta():
          model=badminton_db
          fields=["name","mixedplayed","mixedwon","mixedlost"]
+class searchform(forms.ModelForm):
+      class Meta():
+         model=badminton_db
+         fields=["name"]                                                         
                                                             

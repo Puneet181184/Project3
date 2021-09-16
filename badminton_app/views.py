@@ -7,6 +7,8 @@ from badminton_app.forms import careerstatsform
 from badminton_app.forms import singlesstatsform
 from badminton_app.forms import doublesstatsform
 from badminton_app.forms import mixedstatsform
+from badminton_app.forms import searchform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"badminton_app/home.html")
@@ -63,7 +65,7 @@ def form_about(request):
          gender=form.cleaned_data["gender"]
          rank=form.cleaned_data["rank"]
          tourrank=form.cleaned_data["tourrank"]
-         defaults={"gender":gender,"rank":rank,"tourank":tourrank}
+         defaults={"gender":gender,"rank":rank,"tourrank":tourrank}
          obj,created=badminton_db.objects.update_or_create(name=name,defaults=defaults)
          return render(request,"badminton_app/submit_about.html")
       else:
@@ -143,5 +145,18 @@ def form_mixedstats(request):
       else:
          print("error form invalid")      
     return render(request,"badminton_app/form_mixedstats.html",{"form":form})  
-
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=badminton_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"badminton_app/error_player.html")
+         return render(request,"badminton_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"badminton_app/search_player.html",{"form":form})
 
