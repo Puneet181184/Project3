@@ -160,3 +160,92 @@ def search_player(request):
          print(" error form invalid")
     return render(request,"badminton_app/search_player.html",{"form":form})
 
+def search_about(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=badminton_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"badminton_app/error_about.html")
+         return render(request,"badminton_app/result_about.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"badminton_app/search_about.html",{"form":form})
+def search_details(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=badminton_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"badminton_app/error_details.html")
+         return render(request,"badminton_app/result_details.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"badminton_app/search_details.html",{"form":form})
+def search_careerstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=badminton_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"badminton_app/error_careerstats.html")
+         return render(request,"badminton_app/result_careerstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"badminton_app/search_careerstats.html",{"form":form})
+def search_singlesstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=badminton_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"badminton_app/error_singlesstats.html")
+         return render(request,"badminton_app/result_singlesstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"badminton_app/search_singlesstats.html",{"form":form})
+def search_doublesstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=badminton_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"badminton_app/error_doublesstats.html")
+         return render(request,"badminton_app/result_doublesstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"badminton_app/search_doublesstats.html",{"form":form})
+def search_mixedstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=badminton_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"badminton_app/error_mixedstats.html")
+         return render(request,"badminton_app/result_mixedstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"badminton_app/search_mixedstats.html",{"form":form})
+
+
+
+
+
