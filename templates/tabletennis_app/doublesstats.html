@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "tabletennis_app/base.html" %}
+{% block body_block %}
+<h1>This page has the age and country details for all players.</h1>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">			
+<li> <a class="navbar-link" href={% url "tabletennis_app:doublesstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Doublesstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Doubles Played</th>
+<th>Doubles Won</th>
+<th>Doubles Lost</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.doublesplayed }}</td>
+<td>{{ entry.doubleswon }}</td>
+<td>{{ entry.doubleslost }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
