@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from tabletennis_app.models import tabletennis_db
 from tabletennis_app.forms import playerform
+from tabletennis_app.forms import aboutform
+from tabletennis_app.forms import detailsform
+from tabletennis_app.forms import careerstatsform
+from tabletennis_app.forms import singlesstatsform
+from tabletennis_app.forms import doublesstatsform
+from tabletennis_app.forms import totalstatsform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"tabletennis_app/home.html")
@@ -115,7 +122,7 @@ def form_doublesstats(request):
          name=form.cleaned_data["name"]
          doublesplayed=form.cleaned_data["doublesplayed"]
          doubleswon=form.cleaned_data["doubleswon"]
-         doublleslost=form.cleaned_data["doubleslost"]
+         doubleslost=form.cleaned_data["doubleslost"]
          defaults={"doublesplayed":doublesplayed,"doubleswon":doubleswon,"doubleslost":doubleslost}
          obj,created=tabletennis_db.objects.update_or_create(name=name,defaults=defaults)
          return render(request,"tabletennis_app/submit_doublesstats.html")

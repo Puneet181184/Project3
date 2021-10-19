@@ -22,7 +22,7 @@ class  tabletennis_db(models.Model):
    doubleswon=models.CharField(max_length=512,null=True)
    doubleslost=models.CharField(max_length=512,null=True)
    totalplayed=models.CharField(max_length=512,null=True)
-   totalwn=models.CharField(max_length=512,null=True)
+   totalwon=models.CharField(max_length=512,null=True)
    totallost=models.CharField(max_length=512,null=True)
 
 
