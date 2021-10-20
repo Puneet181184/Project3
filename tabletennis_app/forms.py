@@ -29,7 +29,10 @@ class totalstatsform(forms.ModelForm):
       class Meta():
          model=tabletennis_db
          fields=["name","totalplayed","totalwon","totallost"] 
-
-
+class searchform(forms.ModelForm):
+      class Meta():
+         model=tabletennis_db
+         fields=["name"]                                                         
+                               
 
 

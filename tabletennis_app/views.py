@@ -7,6 +7,7 @@ from tabletennis_app.forms import careerstatsform
 from tabletennis_app.forms import singlesstatsform
 from tabletennis_app.forms import doublesstatsform
 from tabletennis_app.forms import totalstatsform
+from tabletennis_app.forms import searchform
 
 def home(request):
 	#return HttpResponse("Hello World!")
@@ -144,3 +145,17 @@ def form_totalstats(request):
       else:
          print("error form invalid")      
     return render(request,"tabletennis_app/form_totalstats.html",{"form":form})       
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=tabletennis_db.objects.get(name__iexact=name) 
+         except tabletennis_db.DoesNotExist:
+             return render(request,"tabletennis_app/error_player.html")
+         return render(request,"tabletennis_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"tabletennis_app/search_player.html",{"form":form})
