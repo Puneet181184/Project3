@@ -19,6 +19,13 @@ urlpatterns=[
   re_path(r'form_do/',views.form_doublesstats,name='form_doublesstats'),
   re_path(r'form_t/',views.form_totalstats,name='form_totalstats'),
   re_path(r'search_p/',views.search_player,name='search_player'),
+  re_path(r'search_a/',views.search_about,name='search_about'),
+  re_path(r'search_d/',views.search_details,name='search_details'),
+  re_path(r'search_c/',views.search_careerstats,name='search_careerstats'),
+  re_path(r'search_s/',views.search_singlesstats,name='search_singlesstats'),
+  re_path(r'search_do/',views.search_doublesstats,name='search_doublesstats'),
+  re_path(r'search_t/',views.search_totalstats,name='search_totalstats'),
+  
   
 
  ]
