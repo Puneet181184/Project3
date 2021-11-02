@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'golf_app',
     'badminton_app',
     'tabletennis_app',
+    'bowling_app',
 ]
 
 MIDDLEWARE = [
