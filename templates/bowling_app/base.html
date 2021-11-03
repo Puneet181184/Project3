@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+   <title>Bowling site</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>-->
+   <!--<link rel="stylesheet" href="{% static "/css/mystyle.css" %}"/>-->
+<style>
+body{
+	font:20px,sans-serif;
+	line-height:1.8;
+	color:#f5f6f7;
+}
+p{
+	font-size:16px;
+
+}
+.margin{
+margin-bottom:45px;
+}
+.bg-1{
+background-color:#1abc9c;
+color:#ffffff;
+}
+.bg-2{
+background-color:white;
+color:black; 	
+}
+.container-fluid{
+padding-top:15px;
+padding-bottom:15px;		
+}
+.navbar{
+padding-top:0px;
+padding-bottom:0px;
+border:0;
+border-radius:0;
+margin-bottom:1rem;
+font-size:16px; 
+}
+.navbar-nav li a:hover{
+color:#1abc9c !important;	
+}
+table,th,td{
+border:1px solid black;
+border-collapse:collapse;
+margin-left:auto;
+margin-right:auto;
+}
+th,td{
+padding:15px;
+text-align:left;
+}
+caption{
+text-align:center;
+margin-bottom:5px;
+font-size:160%;
+padding:5px;
+font-weight:bold;
+color:black;
+}
+.column{
+float:left;
+width:25%;
+padding:5px;   
+}
+.row::after{
+content:"";
+clear:both;
+display:table; 
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="w3-sidebar w3-bar-block w3-green w3-border w3-large" style="width:10%">
+<a href={% url "main:main" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none 
+w3-hover-text-black w3-xxlarge"><i class="fa fa-home"></i></a>
+<a href={% url "music_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Music</a>
+<a href={% url "books_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Books</a>
+<a href={% url "cricket_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Cricket</a>
+<a href={% url "football_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Football</a>
+<a href={% url "tennis_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Lawn Tennis</a>
+<a href={% url "chess_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Chess</a>
+<a href={% url "basketball_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Basketball</a>
+<a href={% url "baseball_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Baseball</a>
+<a href={% url "rugby_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Rugby</a>
+<a href={% url "golf_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Golf</a>
+<a href={% url "badminton_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Badminton</a>
+<a href={% url "tabletennis_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Tabletennis</a>
+<a href={% url "bowling_app:home" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Bowling</a>
+
+
+<a href={% url "main:contactus" %} class="w3-bar-item w3-button w3-border-bottom w3-hover-none w3-hover-text-black">Contact us</a>
+
+</div>
+<div style="margin-left:10%">   
+<nav class="navbar navbar-expand-lg  navbar navbar-dark bg-primary">
+<div class="container-fluid">
+<div class="navbar-header">
+<a class="navbar-brand" href={% url "main:main" %}>Encyclopedia</a>
+</div>   
+<ul class="nav navbar-nav">
+<li><a class="navbar-link nav-item active" href={% url "tabletennis_app:home" %}>Bowling Home</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</div>
+</nav>
+<div class="container-fluid bg-1 text-center">
+<h3 class="margin">Welcome to the best collection of bowling players.</h3>	
+<p> Browse details for Hundreds of players. You can also add new entries to the data base and search for an existing entry.</p>
+</div>
+ <div class="container-fluid bg-2 text-center">
+   {% block body_block %}
+   {% endblock %}
+   </div>
+<footer class="container-fluid bg-1 text-center">
+<p><a href={% url "main:contactus" %}>Contact us</a></p>
+</footer>
+</div>
+</body>
+</html>	
