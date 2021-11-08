@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from bowling_app.models import bowling_db
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"bowling_app/home.html")
