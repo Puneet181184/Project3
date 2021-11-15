@@ -42,4 +42,82 @@ def form_player(request):
       else:
          print("error form invalid")      
     return render(request,"bowling_app/form_player.html",{"form":form})   
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         gender=form.cleaned_data["gender"]
+         city=form.cleaned_data["city"]
+         state=form.cleaned_data["state"]
+         defaults={"gender":gender,"city":city,"state":state}
+         obj,created=bowling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"bowling_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"bowling_app/form_about.html",{"form":form})
+def form_details(request):
+    form=detailsform()
+    if request.method=="POST":
+      form=detailsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         debut=form.cleaned_data["debut"]
+         defaults={"debut":debut}
+         obj,created=bowling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"bowling_app/submit_details.html")
+      else:
+         print("error form invalid")      
+    return render(request,"bowling_app/form_details.html",{"form":form}) 
+def form_careerstats(request):
+    form=careerstatsform()
+    if request.method=="POST":
+      form=careerstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         bowls=form.cleaned_data["bowls"]
+         events=form.cleaned_data["events"]
+         championships=form.cleaned_data["championships"]
+         defaults={"bowls":bowls,"events":events,"championships":championships}
+         obj,created=bowling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"bowling_app/submit_careerstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"bowling_app/form_careerstats.html",{"form":form})
+def form_matchstats(request):
+    form=matchstatsform()
+    if request.method=="POST":
+      form=matchstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         matches=form.cleaned_data["matches"]
+         cashes=form.cleaned_data["cashes"]
+         defaults={"matches":matches,"cashes":cashes}
+         obj,created=bowling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"bowling_app/submit_matchstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"bowling_app/form_matchstats.html",{"form":form})
+def form_titlestats(request):
+    form=titlestatsform()
+    if request.method=="POST":
+      form=titlestatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         titles=form.cleaned_data["titles"]
+         average=form.cleaned_data["average"]
+         defaults={"titles":titles,"average":average}
+         obj,created=bowling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"bowling_app/submit_titlestats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"bowling_app/form_titlestats.html",{"form":form})    
+
+
+
+
+
+
+
 

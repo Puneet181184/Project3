@@ -11,4 +11,9 @@ urlpatterns=[
   re_path(r'matchstats/',views.matchstats,name='matchstats'),
   re_path(r'titlestats/',views.titlestats,name='titlestats'),
   re_path(r'form_p/',views.form_player,name='form_player'),
+  re_path(r'form_a/',views.form_about,name='form_about'),
+  re_path(r'form_d/',views.form_details,name='form_details'),
+  re_path(r'form_c/',views.form_careerstats,name='form_careerstats'),
+  re_path(r'form_m/',views.form_matchstats,name='form_matchstats'),
+  re_path(r'form_t/',views.form_titlestats,name='form_titlestats'),
   ]
