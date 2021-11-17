@@ -24,4 +24,8 @@ class matchstatsform(forms.ModelForm):
 class titlestatsform(forms.ModelForm):
       class Meta():
          model=bowling_db
-         fields=["name","titles","average"]                                           
+         fields=["name","titles","average"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=bowling_db
+         fields=["name"]                                                                  

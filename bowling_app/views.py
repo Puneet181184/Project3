@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from bowling_app.models import bowling_db
 from bowling_app.forms import playerform
+from bowling_app.forms import aboutform
+from bowling_app.forms import detailsform
+from bowling_app.forms import careerstatsform
+from bowling_app.forms import matchstatsform
+from bowling_app.forms import titlestatsform
+from bowling_app.forms import searchform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"bowling_app/home.html")
@@ -113,6 +120,20 @@ def form_titlestats(request):
       else:
          print("error form invalid")      
     return render(request,"bowling_app/form_titlestats.html",{"form":form})    
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=bowling_db.objects.get(name__iexact=name) 
+         except bowling_db.DoesNotExist:
+             return render(request,"bowling_app/error_player.html")
+         return render(request,"bowling_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"bowling_app/search_player.html",{"form":form})
 
 
 
