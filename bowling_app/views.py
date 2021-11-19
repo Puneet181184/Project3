@@ -134,6 +134,82 @@ def search_player(request):
       else:
          print(" error form invalid")
     return render(request,"bowling_app/search_player.html",{"form":form})
+def search_about(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=bowling_db.objects.get(name__iexact=name) 
+         except bowling_db.DoesNotExist:
+             return render(request,"bowling_app/error_about.html")
+         return render(request,"bowling_app/result_about.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"bowling_app/search_about.html",{"form":form})
+def search_details(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=bowling_db.objects.get(name__iexact=name) 
+         except bowling_db.DoesNotExist:
+             return render(request,"bowling_app/error_details.html")
+         return render(request,"bowling_app/result_details.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"bowling_app/search_details.html",{"form":form})
+def search_careerstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=bowling_db.objects.get(name__iexact=name) 
+         except bowling_db.DoesNotExist:
+             return render(request,"bowling_app/error_careerstats.html")
+         return render(request,"bowling_app/result_careerstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"bowling_app/search_careerstats.html",{"form":form})
+def search_matchstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=bowling_db.objects.get(name__iexact=name) 
+         except bowling_db.DoesNotExist:
+             return render(request,"bowling_app/error_matchstats.html")
+         return render(request,"bowling_app/result_matchstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"bowling_app/search_matchstats.html",{"form":form})
+def search_titlestats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=bowling_db.objects.get(name__iexact=name) 
+         except bowling_db.DoesNotExist:
+             return render(request,"bowling_app/error_titlestats.html")
+         return render(request,"bowling_app/result_titlestats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"bowling_app/search_titlestats.html",{"form":form})
+
+
+
+
+
+
 
 
 
