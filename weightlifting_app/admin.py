@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from weightlifting_app.models import weightlifting_db
+admin.site.register(weightlifting_db)
