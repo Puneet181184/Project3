@@ -10,16 +10,16 @@ def player(request):
 def about(request):
     players_list=weightlifting_db.objects.order_by("name")
     weightlifting_dict={"player":players_list}
-    return render(request,"weightlifting_app/player.html",context=weightlifting_dict)       
+    return render(request,"weightlifting_app/about.html",context=weightlifting_dict)       
 def details(request):
     players_list=weightlifting_db.objects.order_by("name")
     weightlifting_dict={"player":players_list}
-    return render(request,"weightlifting_app/player.html",context=weightlifting_dict)       
+    return render(request,"weightlifting_app/details.html",context=weightlifting_dict)       
 def careerstats(request):
     players_list=weightlifting_db.objects.order_by("name")
     weightlifting_dict={"player":players_list}
-    return render(request,"weightlifting_app/player.html",context=weightlifting_dict)       
+    return render(request,"weightlifting_app/careerstats.html",context=weightlifting_dict)       
 def matchstats(request):
     players_list=weightlifting_db.objects.order_by("name")
     weightlifting_dict={"player":players_list}
-    return render(request,"weightlifting_app/player.html",context=weightlifting_dict)       
+    return render(request,"weightlifting_app/matchstats.html",context=weightlifting_dict)       
