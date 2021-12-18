@@ -21,3 +21,7 @@ class matchstatsform(forms.ModelForm):
       class Meta():
          model=weightlifting_db
          fields=["name","total"]
+class searchform(forms.ModelForm):
+      class Meta():
+         model=weightlifting_db
+         fields=["name"]             

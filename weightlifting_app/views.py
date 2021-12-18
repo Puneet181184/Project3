@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from weightlifting_app.models import weightlifting_db
 from weightlifting_app.forms import playerform
+from weightlifting_app.forms import aboutform
+from weightlifting_app.forms import detailsform
+from weightlifting_app.forms import careerstatsform
+from weightlifting_app.forms import matchstatsform
+from weightlifting_app.forms import searchform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"weightlifting_app/home.html")
@@ -94,4 +99,74 @@ def form_matchstats(request):
          return render(request,"weightlifting_app/submit_matchstats.html")
       else:
          print("error form invalid")      
-    return render(request,"weightlifting_app/form_matchstats.html",{"form":form})                           
+    return render(request,"weightlifting_app/form_matchstats.html",{"form":form}) 
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=weightlifting_db.objects.get(name__iexact=name) 
+         except weightlifting_db.DoesNotExist:
+             return render(request,"weightlifting_app/error_player.html")
+         return render(request,"weightlifting_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"weightlifting_app/search_player.html",{"form":form})  
+def search_about(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=weightlifting_db.objects.get(name__iexact=name) 
+         except weightlifting_db.DoesNotExist:
+             return render(request,"weightlifting_app/error_about.html")
+         return render(request,"weightlifting_app/result_about.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"weightlifting_app/search_about.html",{"form":form}) 
+def search_details(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=weightlifting_db.objects.get(name__iexact=name) 
+         except weightlifting_db.DoesNotExist:
+             return render(request,"weightlifting_app/error_details.html")
+         return render(request,"weightlifting_app/result_details.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"weightlifting_app/search_details.html",{"form":form})  
+def search_careerstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=weightlifting_db.objects.get(name__iexact=name) 
+         except weightlifting_db.DoesNotExist:
+             return render(request,"weightlifting_app/error_careerstats.html")
+         return render(request,"weightlifting_app/result_careerstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"weightlifting_app/search_careerstats.html",{"form":form})
+def search_matchstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=weightlifting_db.objects.get(name__iexact=name) 
+         except weightlifting_db.DoesNotExist:
+             return render(request,"weightlifting_app/error_matchstats.html")
+         return render(request,"weightlifting_app/result_matchstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"weightlifting_app/search_matchstats.html",{"form":form})               
