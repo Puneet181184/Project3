@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "weightlifting_app/base.html" %}
+{% block body_block %}
+<h1>Please provide the player name to search the details.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "weightlifting_app:form_matchstats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "weightlifting_app:search_matchstats" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "weightlifting_app:matchstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+<div class="container-fluid">
+<form method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<input type="submit" class="btn btn-primary" value="submit">	
+</form>
+</div>
+
+{% endblock %}
