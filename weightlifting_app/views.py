@@ -73,7 +73,7 @@ def form_details(request):
       else:
          print("error form invalid")      
     return render(request,"weightlifting_app/form_details.html",{"form":form}) 
-def form_careersstats(request):
+def form_careerstats(request):
     form=careerstatsform()
     if request.method=="POST":
       form=careerstatsform(request.POST)
