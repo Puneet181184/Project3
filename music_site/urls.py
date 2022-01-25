@@ -34,7 +34,7 @@ urlpatterns = [
     path("tabletennis_app",include("tabletennis_app.urls")),
     path("bowling_app",include("bowling_app.urls")),
     path("weightlifting_app",include("weightlifting_app.urls")),
-
+    path("pool_app",include("pool_app.urls")),
 
 
 
