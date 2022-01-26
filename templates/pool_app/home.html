@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "pool_app/base.html" %}
+{% block body_block %}
+<h1>Click on the navigation buttons above to access the details.</h1>
+<div class="row">
+<div class="column">
+<p><a href={% url "pool_app:home" %}>		
+<img src= "/static/images/pool_image1.jpg" alt="pool image" width=250 height=250>
+</a></p>
+</div>
+<div class="column">
+<p><a href={% url "pool_app:home" %}>		
+<img src= "/static/images/pool_image2.jpg" alt="pool image" width=250 height=250>
+</a></p>
+</div>
+<div class="column">
+<p><a href={% url "pool_app:home" %}>		
+<img src= "/static/images/pool_image3.jpg" alt="pool image" width=250 height=250>
+</a></p>
+</div>
+<div class="column">
+<p><a href={% url "pool_app:home" %}>		
+<img src= "/static/images/pool_image4.jpg" alt="pool image" width=250 height=250>
+</a></p>
+</div>
+</div>
+{% endblock %}
