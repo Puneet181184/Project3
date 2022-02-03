@@ -38,4 +38,60 @@ def form_player(request):
          return render(request,"pool_app/submit_player.html")
       else:
          print("error form invalid")      
-    return render(request,"pool_app/form_player.html",{"form":form})     		    	    		    		    
+    return render(request,"pool_app/form_player.html",{"form":form})  
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         gender=form.cleaned_data["gender"]
+         defaults={"gender":gender}
+         obj,created=pool_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"pool_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"pool_app/form_about.html",{"form":form}) 
+def form_details(request):
+    form=detailsform()
+    if request.method=="POST":
+      form=detailsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         rank=form.cleaned_data["rank"]
+         wpanumber=form.cleaned_data["wpanumber"]
+         defaults={"rank":rank,"wpanumber":wpanumber}
+         obj,created=pool_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"pool_app/submit_details.html")
+      else:
+         print("error form invalid")      
+    return render(request,"pool_app/form_details.html",{"form":form})  
+def form_pointstats(request):
+    form=pointstatsform()
+    if request.method=="POST":
+      form=pointstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         usopenpoints=form.cleaned_data["usopenpoints"]
+         austriaopenpoints=form.cleaned_data["austriaopenpoints"]
+         defaults={"usopenpoints":usopenpoints,"austriaopenpoints":austriaopenpoints}
+         obj,created=pool_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"pool_app/submit_pointstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"pool_app/form_pointstats.html",{"form":form}) 
+def form_careerstats(request):
+    form=careerstatsform()
+    if request.method=="POST":
+      form=careerstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         worldcuppoints=form.cleaned_data["worldcuppoints"]
+         totalpoints=form.cleaned_data["totalpoints"]
+         defaults={"worldcuppoints":worldcuppoints,"totalpoints":totalpoints}
+         obj,created=pool_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"pool_app/submit_careerstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"pool_app/form_careerstats.html",{"form":form})  
+                                                                                                                                                                                                                 		    	    		    		    
