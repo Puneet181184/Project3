@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from pool_app.models import pool_db
 from pool_app.forms import playerform
+from pool_app.forms import aboutform
+from pool_app.forms import detailsform
+from pool_app.forms import pointstatsform
+from pool_app.forms import careerstatsform
+from pool_app.forms import searchform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"pool_app/home.html")
@@ -93,5 +98,21 @@ def form_careerstats(request):
          return render(request,"pool_app/submit_careerstats.html")
       else:
          print("error form invalid")      
-    return render(request,"pool_app/form_careerstats.html",{"form":form})  
+    return render(request,"pool_app/form_careerstats.html",{"form":form}) 
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=pool_db.objects.get(name__iexact=name) 
+         except pool_db.DoesNotExist:
+             return render(request,"pool_app/error_player.html")
+         return render(request,"pool_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"pool_app/search_player.html",{"form":form})
+
+  
                                                                                                                                                                                                                  		    	    		    		    

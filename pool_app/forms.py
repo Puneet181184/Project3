@@ -13,11 +13,15 @@ class detailsform(forms.ModelForm):
       class Meta():
          model=pool_db
          fields=["name","rank","wpanumber"] 
-class pointsstatsform(forms.ModelForm):
+class pointstatsform(forms.ModelForm):
       class Meta():
          model=pool_db
          fields=["name","usopenpoints","austriaopenpoints"] 
 class careerstatsform(forms.ModelForm):
       class Meta():
          model=pool_db
-         fields=["name","worldcuppoints","totalpoints"]                                 
+         fields=["name","worldcuppoints","totalpoints"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=pool_db
+         fields=["name"]                                                         
