@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "pool_app/base.html" %}
+{% block body_block %}
+<h1>Please find the details for the requested player entry.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "pool_app:form_careerstats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "pool_app:search_careerstats" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "pool_app:careerstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Careerstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>World cup points</th>
+<th>Total points</th>
+</tr>
+{% if player %}
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.worldcuppoints }}</td>
+<td>{{ player.totalpoints }}</td>
+</tr>
+{% endif %}
+</table> 	
+{% endblock %}
