@@ -5,7 +5,9 @@
 
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
 <div class="container">
-<ul class="nav navbar-nav">		
+<ul class="nav navbar-nav">	
+<li> <a class="navbar-link" href={% url "pool_app:form_careerstats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "pool_app:search_careerstats" %}>Search an entry</a></li>	
 <li> <a class="navbar-link" href={% url "pool_app:careerstats" %}>Go back to list</a></li>
 </ul>
 </div>
@@ -21,7 +23,7 @@
 {% for entry in player %}
 <tr>
 <td>{{ entry.name }}</td>
-<td>{{ entry.worldcupoints }}</td>
+<td>{{ entry.worldcuppoints }}</td>
 <td>{{ entry.totalpoints }}</td>
 </tr>
 {% endfor %}
