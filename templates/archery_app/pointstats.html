@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "archery_app/base.html" %}
+{% block body_block %}
+<h1>This page has the pointstats details for all players.</h1>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">		
+<li> <a class="navbar-link" href={% url "archery_app:pointstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Pointstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Worldcup Gold</th>
+<th>Worldcup Silver</th>
+<th>Worldcup Bronze</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.worldcupgold }}</td>
+<td>{{ entry.worldcupsilver }}</td>
+<td>{{ entry.worldcupbronze }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
