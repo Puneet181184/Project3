@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "archery_app/base.html" %}
+{% block body_block %}
+<h1>Enter the name, age and country details for new player entry.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "archery_app:form_player" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "archery_app:player" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav> 	
+<div class="container-fluid">
+<form method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<input type="submit" class="btn btn-primary" value="submit">	
+</form>
+</div>
+{% endblock %}
