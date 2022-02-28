@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from archery_app.models import archery_db
 from archery_app.forms import playerform
+from archery_app.forms import aboutform
+from archery_app.forms import detailsform
+from archery_app.forms import gamestatsform
+from archery_app.forms import pointstatsform
+from archery_app.forms import searchform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"archery_app/home.html")
@@ -96,6 +102,20 @@ def form_pointstats(request):
       else:
          print("error form invalid")      
     return render(request,"archery_app/form_pointstats.html",{"form":form})     
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=archery_db.objects.get(name__iexact=name) 
+         except archery_db.DoesNotExist:
+             return render(request,"archery_app/error_player.html")
+         return render(request,"archery_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"archery_app/search_player.html",{"form":form})
 
 
 

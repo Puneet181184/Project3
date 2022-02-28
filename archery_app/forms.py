@@ -20,4 +20,8 @@ class gamestatsform(forms.ModelForm):
 class pointstatsform(forms.ModelForm):
       class Meta():
          model=archery_db
-         fields=["name","worldcupgold","worldcupsilver","worldcupbronze"]                                
+         fields=["name","worldcupgold","worldcupsilver","worldcupbronze"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=archery_db
+         fields=["name"]                                             
