@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'weightlifting_app',
     'pool_app',
     'archery_app',
+    'fencing_app',
+    
 ]
 
 MIDDLEWARE = [
