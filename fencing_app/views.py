@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from fencing_app.models import fencing_db
 from fencing_app.forms import playerform
+from fencing_app.forms import aboutform
+from fencing_app.forms import detailsform
+from fencing_app.forms import gamestatsform
+from fencing_app.forms import pointstatsform
+from fencing_app.forms import searchform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"fencing_app/home.html")
@@ -95,4 +100,18 @@ def form_pointstats(request):
          return render(request,"fencing_app/submit_pointstats.html")
       else:
          print("error form invalid")      
-    return render(request,"fencing_app/form_pointstats.html",{"form":form})                      
+    return render(request,"fencing_app/form_pointstats.html",{"form":form})   
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=fencing_db.objects.get(name__iexact=name) 
+         except fencing_db.DoesNotExist:
+             return render(request,"fencing_app/error_player.html")
+         return render(request,"fencing_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"fencing_app/search_player.html",{"form":form})                       

@@ -20,4 +20,8 @@ class gamestatsform(forms.ModelForm):
 class pointstatsform(forms.ModelForm):
       class Meta():
          model=fencing_db
-         fields=["name","points","worldcupgold","worldcupsilver","worldcupbronze"]                               
+         fields=["name","points","worldcupgold","worldcupsilver","worldcupbronze"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=fencing_db
+         fields=["name"]                                                                                    
