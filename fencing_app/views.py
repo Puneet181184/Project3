@@ -114,4 +114,60 @@ def search_player(request):
          return render(request,"fencing_app/result_player.html",context={"player":my_value})
       else:
          print(" error form invalid")
-    return render(request,"fencing_app/search_player.html",{"form":form})                       
+    return render(request,"fencing_app/search_player.html",{"form":form}) 
+def search_about(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=fencing_db.objects.get(name__iexact=name) 
+         except fencing_db.DoesNotExist:
+             return render(request,"fencing_app/error_about.html")
+         return render(request,"fencing_app/result_about.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"fencing_app/search_about.html",{"form":form})  
+def search_details(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=fencing_db.objects.get(name__iexact=name) 
+         except fencing_db.DoesNotExist:
+             return render(request,"fencing_app/error_details.html")
+         return render(request,"fencing_app/result_details.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"fencing_app/search_details.html",{"form":form})  
+def search_gamestats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=fencing_db.objects.get(name__iexact=name) 
+         except fencing_db.DoesNotExist:
+             return render(request,"fencing_app/error_gamestats.html")
+         return render(request,"fencing_app/result_gamestats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"fencing_app/search_gamestats.html",{"form":form})   
+def search_pointstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=fencing_db.objects.get(name__iexact=name) 
+         except fencing_db.DoesNotExist:
+             return render(request,"fencing_app/error_pointstats.html")
+         return render(request,"fencing_app/result_pointstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"fencing_app/search_pointstats.html",{"form":form})                                   
