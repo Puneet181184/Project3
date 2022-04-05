@@ -5,7 +5,9 @@
 
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
 <div class="container">
-<ul class="nav navbar-nav">		
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "fencing_app:form_details" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "fencing_app:search_details" %}>Search an entry</a></li>		
 <li> <a class="navbar-link" href={% url "fencing_app:details" %}>Go back to list</a></li>
 </ul>
 </div>
