@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'pool_app',
     'archery_app',
     'fencing_app',
-    
+    'cycling_app',
 ]
 
 MIDDLEWARE = [
