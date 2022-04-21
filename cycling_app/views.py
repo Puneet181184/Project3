@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from cycling_app.models import cycling_db
+from cycling_app.forms import playerform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"cycling_app/home.html")
