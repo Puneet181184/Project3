@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from cycling_app.models import cycling_db
 from cycling_app.forms import playerform
+from cycling_app.forms import aboutform
+from cycling_app.forms import detailsform
+from cycling_app.forms import gamestatsform
+from cycling_app.forms import pointstatsform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"cycling_app/home.html")
@@ -39,3 +44,61 @@ def form_player(request):
       else:
          print("error form invalid")      
     return render(request,"cycling_app/form_player.html",{"form":form})    
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         debut=form.cleaned_data["debut"]
+         gender=form.cleaned_data["gender"]
+         defaults={"debut":debut,"gender":gender}
+         obj,created=cycling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"cycling_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"cycling_app/form_about.html",{"form":form})  
+def form_details(request):
+    form=detailsform()
+    if request.method=="POST":
+      form=detailsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         rank=form.cleaned_data["rank"]
+         height=form.cleaned_data["height"]
+         weight=form.cleaned_data["weight"]
+         defaults={"rank":rank,"height":height,"weight":weight}
+         obj,created=cycling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"cycling_app/submit_details.html")
+      else:
+         print("error form invalid")      
+    return render(request,"cycling_app/form_details.html",{"form":form}) 
+def form_gamestats(request):
+    form=gamestatsform()
+    if request.method=="POST":
+      form=gamestatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         grandtours=form.cleaned_data["grandtours"]
+         classics=form.cleaned_data["classics"]
+         defaults={"grandtours":grandtours,"classics":classics}
+         obj,created=cycling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"cycling_app/submit_gamestats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"cycling_app/form_gamestats.html",{"form":form}) 
+def form_pointstats(request):
+    form=pointstatsform()
+    if request.method=="POST":
+      form=pointstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         points=form.cleaned_data["points"]
+         wins=form.cleaned_data["wins"]
+         defaults={"points":points,"wins":wins}
+         obj,created=cycling_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"cycling_app/submit_pointstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"cycling_app/form_pointstats.html",{"form":form})        
+
