@@ -20,4 +20,8 @@ class gamestatsform(forms.ModelForm):
 class pointstatsform(forms.ModelForm):
       class Meta():
          model=cycling_db
-         fields=["name","points","wins"]                                
+         fields=["name","points","wins"]  
+class searchform(forms.ModelForm):
+      class Meta():
+         model=cycling_db
+         fields=["name"]                                                 
