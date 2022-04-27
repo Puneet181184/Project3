@@ -5,7 +5,7 @@ from cycling_app.forms import aboutform
 from cycling_app.forms import detailsform
 from cycling_app.forms import gamestatsform
 from cycling_app.forms import pointstatsform
-
+from cycling_app.forms import searchform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"cycling_app/home.html")
