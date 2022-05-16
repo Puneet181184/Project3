@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from darts_app.models import darts_db
 
 def home(request):
 	#return HttpResponse("Hello World!")
