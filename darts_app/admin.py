@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from darts_app.models import darts_db
+admin.site.register(darts_db)
