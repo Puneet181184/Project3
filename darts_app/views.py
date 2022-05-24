@@ -39,4 +39,59 @@ def form_player(request):
          return render(request,"darts_app/submit_player.html")
       else:
          print("error form invalid")      
-    return render(request,"darts_app/form_player.html",{"form":form})     	    	    
+    return render(request,"darts_app/form_player.html",{"form":form})
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         gender=form.cleaned_data["gender"]
+         defaults={"gender":gender}
+         obj,created=darts_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"darts_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"darts_app/form_about.html",{"form":form})
+def form_details(request):
+    form=detailsform()
+    if request.method=="POST":
+      form=detailsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         rank=form.cleaned_data["rank"]
+         height=form.cleaned_data["height"]
+         defaults={"rank":rank,"height":height}
+         obj,created=darts_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"darts_app/submit_details.html")
+      else:
+         print("error form invalid")      
+    return render(request,"darts_app/form_details.html",{"form":form})  
+def form_gamestats(request):
+    form=gamestatsform()
+    if request.method=="POST":
+      form=gamestatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         darts=form.cleaned_data["darts"]
+         defaults={"darts":darts}
+         obj,created=darts_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"darts_app/submit_gamestats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"darts_app/form_gamestats.html",{"form":form})
+def form_pointstats(request):
+    form=pointstatsform()
+    if request.method=="POST":
+      form=pointstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         titles=form.cleaned_data["titles"]
+         finishes=form.cleaned_data["finishes"]
+         defaults={"titles":titles,"finishes":finishes}
+         obj,created=darts_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"darts_app/submit_pointstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"darts_app/form_pointstats.html",{"form":form})              
+
