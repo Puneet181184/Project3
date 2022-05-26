@@ -20,7 +20,11 @@ class gamestatsform(forms.ModelForm):
 class pointstatsform(forms.ModelForm):
       class Meta():
          model=darts_db
-         fields=["name","titles","finishes"] 
+         fields=["name","titles","finishes"]
+class searchform(forms.ModelForm):
+      class Meta():
+         model=darts_db
+         fields=["name"]             
                          
 
 
