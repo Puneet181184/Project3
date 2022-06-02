@@ -106,8 +106,8 @@ def search_player(request):
       if form.is_valid():
          name=form.cleaned_data["name"]
          try:
-             my_value=archery_db.objects.get(name__iexact=name) 
-         except archery_db.DoesNotExist:
+             my_value=darts_db.objects.get(name__iexact=name) 
+         except darts_db.DoesNotExist:
              return render(request,"darts_app/error_player.html")
          return render(request,"darts_app/result_player.html",context={"player":my_value})
       else:
