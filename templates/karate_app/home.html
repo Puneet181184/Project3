@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "karate_app/base.html" %}
+{% block body_block %}
+<h1>Click on the navigation buttons above to access the details.</h1>
+<div class="row">
+<div class="column">
+<p><a href={% url "karate_app:home" %}>		
+<img src= "/static/images/karate_image1.jpg" alt="karate image" width=250 height=250>
+</a></p>
+</div>
+<div class="column">
+<p><a href={% url "karate_app:home" %}>		
+<img src= "/static/images/karate_image2.jpg" alt="karate image" width=250 height=250>
+</a></p>
+</div>
+<div class="column">
+<p><a href={% url "karate_app:home" %}>		
+<img src= "/static/images/karate_image3.jpg" alt="karate image" width=250 height=250>
+</a></p>
+</div>
+<div class="column">
+<p><a href={% url "karate_app:home" %}>		
+<img src= "/static/images/karate_image4.jpg" alt="karate image" width=250 height=250>
+</a></p>
+</div>
+</div>
+{% endblock %}
