@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from karate_app.models import karate_db
 
 def home(request):
 	#return HttpResponse("Hello World!")
