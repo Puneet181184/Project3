@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "karate_app/base.html" %}
+{% block body_block %}
+<h1>This page has the points details for all players.</h1>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">	
+	
+<li> <a class="navbar-link" href={% url "karate_app:pointstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Pointstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Worldgold</th>
+<th>Worldsilver</th>
+<th>Worldbronze</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.worldgold }}</td>
+<td>{{ entry.worldsilver }}</td> 
+<td>{{ entry.worldbronze }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
