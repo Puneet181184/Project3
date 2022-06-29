@@ -33,4 +33,46 @@ def form_player(request):
          return render(request,"karate_app/submit_player.html")
       else:
          print("error form invalid")      
-    return render(request,"karate_app/form_player.html",{"form":form})    	    		    	    
+    return render(request,"karate_app/form_player.html",{"form":form})   
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         gender=form.cleaned_data["gender"]
+         defaults={"gender":gender}
+         obj,created=karate_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"karate_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"karate_app/form_about.html",{"form":form}) 
+def form_details(request):
+    form=detailsform()
+    if request.method=="POST":
+      form=detailsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         rank=form.cleaned_data["rank"]
+         category=form.cleaned_data["category"]
+         defaults={"rank":rank,"category":category}
+         obj,created=karate_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"karate_app/submit_details.html")
+      else:
+         print("error form invalid")      
+    return render(request,"karate_app/form_details.html",{"form":form})  
+def form_pointstats(request):
+    form=pointstatsform()
+    if request.method=="POST":
+      form=pointstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         worldgold=form.cleaned_data["worldgold"]
+         worldsilver=form.cleaned_data["worldsilver"]
+         worldbronze=form.cleaned_data["worldbronze"]
+         defaults={"worldgold":worldgold,"worldsilver":worldsilver,"worldbronze":worldbronze}
+         obj,created=karate_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"karate_app/submit_pointstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"karate_app/form_pointstats.html",{"form":form})      
