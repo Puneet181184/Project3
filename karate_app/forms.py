@@ -17,3 +17,7 @@ class pointstatsform(forms.ModelForm):
       class Meta():
          model=karate_db
          fields=["name","worldgold","worldsilver","worldbronze"]                        
+class searchform(forms.ModelForm):
+      class Meta():
+         model=karate_db
+         fields=["name"]              
