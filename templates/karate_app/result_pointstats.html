@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "karate_app/base.html" %}
+{% block body_block %}
+<h1>Please find the details for the requested player entry.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "karate_app:form_pointstats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "karate_app:search_pointstats" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "karate_app:pointstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Pointstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Workldgold</th>
+<th>Worldsilver</th>
+<th>Worldbronze</th>
+</tr>
+{% if player %}
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.worldgold }}</td>
+<td>{{ player.worldsilver }}</td>
+<td>{{ player.worldbronze }}</td>
+</tr>
+{% endif %}
+</table> 	
+{% endblock %}
