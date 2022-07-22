@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'cycling_app',
     'darts_app',
     'karate_app',
+    'surfing_app',
 ]
 
 MIDDLEWARE = [
