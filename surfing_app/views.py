@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from surfing_app.models import surfing_db
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"surfing_app/home.html")
