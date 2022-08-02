@@ -19,3 +19,18 @@ def pointstats(request):
     players_list=surfing_db.objects.order_by("name")
     surfing_dict={"pointstats":players_list}
     return render(request,"surfing_app/pointstats.html",context=surfing_dict)          
+def form_player(request):
+    form=playerform()
+    if request.method=="POST":
+      form=playerform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         age=form.cleaned_data["age"]
+         dob=form.cleaned_data["dob"]
+         country=form.cleaned_data["country"]
+         defaults={"age":age,"dob":dob,"country":country}
+         obj,created=surfing_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"surfing_app/submit_player.html")
+      else:
+         print("error form invalid")      
+    return render(request,"surfing_app/form_player.html",{"form":form})
