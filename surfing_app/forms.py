@@ -17,3 +17,7 @@ class pointstatsform(forms.ModelForm):
       class Meta():
          model=surfing_db
          fields=["name","wins","score"]         
+class searchform(forms.ModelForm):
+      class Meta():
+         model=surfing_db
+         fields=["name"]                       

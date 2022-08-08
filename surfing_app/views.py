@@ -81,3 +81,18 @@ def form_pointstats(request):
       else:
          print("error form invalid")      
     return render(request,"surfing_app/form_pointstats.html",{"form":form})  
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=surfing_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"surfing_app/error_player.html")
+         return render(request,"surfing_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"surfing_app/search_player.html",{"form":form})
+    
