@@ -4,6 +4,8 @@ from surfing_app.forms import playerform
 from surfing_app.forms import aboutform
 from surfing_app.forms import detailsform
 from surfing_app.forms import pointstatsform
+from surfing_app.forms import searchform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"surfing_app/home.html")
@@ -95,4 +97,46 @@ def search_player(request):
       else:
          print(" error form invalid")
     return render(request,"surfing_app/search_player.html",{"form":form})
+def search_about(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=surfing_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"surfing_app/error_about.html")
+         return render(request,"surfing_app/result_about.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"surfing_app/search_about.html",{"form":form}) 
+def search_details(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=surfing_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"surfing_app/error_details.html")
+         return render(request,"surfing_app/result_details.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"surfing_app/search_details.html",{"form":form}) 
+def search_pointstats(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=surfing_db.objects.get(name__iexact=name) 
+         except badminton_db.DoesNotExist:
+             return render(request,"surfing_app/error_pointstats.html")
+         return render(request,"surfing_app/result_pointstats.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"surfing_app/search_pointstats.html",{"form":form})          
     
