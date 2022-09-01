@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from taekwondo_app.models import taekwondo_db
+admin.site.register(taekwondo_db)
