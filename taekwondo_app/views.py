@@ -33,4 +33,47 @@ def form_player(request):
          return render(request,"taekwondo_app/submit_player.html")
       else:
          print("error form invalid")      
-    return render(request,"taekwondo_app/form_player.html",{"form":form})                 
+    return render(request,"taekwondo_app/form_player.html",{"form":form})
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         gender=form.cleaned_data["gender"]
+         weight=form.cleaned_data["weight"]
+         defaults={"gender":gender,"weight":weight}
+         obj,created=taekwondo_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"taekwondo_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"taekwondo_app/form_about.html",{"form":form}) 
+def form_details(request):
+    form=detailsform()
+    if request.method=="POST":
+      form=detailsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         rank=form.cleaned_data["rank"]
+         defaults={"rank":rank}
+         obj,created=taekwondo_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"taekwondo_app/submit_details.html")
+      else:
+         print("error form invalid")      
+    return render(request,"taekwondo_app/form_details.html",{"form":form})   
+def form_pointstats(request):
+    form=pointstatsform()
+    if request.method=="POST":
+      form=pointstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         points=form.cleaned_data["points"]
+         defaults={"points":points}
+         obj,created=taekwondo_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"taekwondo_app/submit_pointstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"taekwondo_app/form_pointstats.html",{"form":form})                 
+
+
+
