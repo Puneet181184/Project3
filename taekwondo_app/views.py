@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from taekwondo_app.models import taekwondo_db
+from taekwondo_app.forms import playerform
+from taekwondo_app.forms import aboutform
+from taekwondo_app.forms import detailsform
+from taekwondo_app.forms import pointstatsform
+
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"taekwondo_app/home.html")
