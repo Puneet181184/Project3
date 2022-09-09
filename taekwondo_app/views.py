@@ -4,7 +4,7 @@ from taekwondo_app.forms import playerform
 from taekwondo_app.forms import aboutform
 from taekwondo_app.forms import detailsform
 from taekwondo_app.forms import pointstatsform
-
+from taekwondo_app.forms import searchform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"taekwondo_app/home.html")
@@ -79,6 +79,20 @@ def form_pointstats(request):
       else:
          print("error form invalid")      
     return render(request,"taekwondo_app/form_pointstats.html",{"form":form})                 
-
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=taekwondo_db.objects.get(name__iexact=name) 
+         except taekwondo_db.DoesNotExist:
+             return render(request,"taekwondo_app/error_player.html")
+         return render(request,"taekwondo_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"taekwondo_app/search_player.html",{"form":form})
+    
 
 

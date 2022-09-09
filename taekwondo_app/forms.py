@@ -16,4 +16,8 @@ class detailsform(forms.ModelForm):
 class pointstatsform(forms.ModelForm):
       class Meta():
          model=taekwondo_db
-         fields=["name","points"]                           
+         fields=["name","points"] 
+class searchform(forms.ModelForm):
+      class Meta():
+         model=taekwondo_db
+         fields=["name"]                                       
