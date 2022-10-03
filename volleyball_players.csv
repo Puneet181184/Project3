@@ -1,0 +1,141 @@
+Name,Age,Date of Birth,Country,Gender,Rank,Height in m,Weight in kg,Points
+Maxim Mikhaylov,34,1988,RUSSIA,MALE,1,2.02,106,8545.6
+Sergio Dutra Santos,46,1975,BRAZIL,MALE,2,1.84,78,8089.7
+Wilfredo Leon,29,1993,CUBA,MALE,3,2.01,96,7806.8
+Osmany Juantorena,37,1985,CUBA,MALE,4,2,85,7052.7
+Sergey Tetyukhin,47,1975,RUSSIA,MALE,5,1.97,89,6553.95
+Ivan Miljković,43,1979,SERBIA,MALE,6,2.06,104,6283.75
+Wallace de Souza,35,1987,BRAZIL,MALE,7,1.98,103,6063.85
+Bruno Rezende,36,1986,BRAZIL,MALE,8,1.9,76,6006.05
+Dmitriy Muserskiy,33,1988,RUSSIA,MALE,9,2.18,104,5900.75
+Andrea Giani,52,1970,ITALY,MALE,10,1.96,97,5868.05
+Robertlandy Simon Aties,35,1987,CUBA,MALE,11,2.08,114,5737.45
+Mariusz Wlazły,39,1983,POLAND,MALE,12,1.94,80,5684.5
+Earvin N'Gapeth,31,1991,FRANCE,MALE,14,1.94,96,5412.35
+Matey Kaziyski,38,1984,BULGARIA,MALE,13,2.02,93,5425.95
+Alexey Verbov,40,1982,RUSSIA,MALE,16,1.83,79,5350.2
+William Arjona,43,1979,BRAZIL,MALE,15,1.85,78,5386.15
+Samuele Papi,49,1973,ITALY,MALE,17,1.91,84,5294.9
+Gilberto de Godoy Filho,45,1976,BRAZIL,MALE,18,1.92,85,5285.55
+Jenia Grebennikov,32,1990,FRANCE,MALE,21,1.88,85,5001.55
+Lorenzo Bernardi,54,1968,ITALY,MALE,19,1.99,93,5204.3
+Bartosz Kurek,34,1988,POLAND,MALE,22,2.05,104,4993.3
+Yoandy Leal Hidalgo,34,1988,CUBA,MALE,20,2.01,105,5058.75
+Nikola Grbić,49,1973,SERBIA,MALE,23,1.93,91,4977.44
+Tsvetan Sokolov,32,1989,BULGARIA,MALE,24,2.06,100,4956.65
+Alessandro Fei,43,1978,ITALY,MALE,25,2.03,90,4938.45
+Dante Amaral,41,1980,BRAZIL,MALE,26,2.01,86,4937.25
+Murilo Endres,41,1981,BRAZIL,MALE,29,1.92,76,4870.8
+Andrea Sartoretti,51,1971,ITALY,MALE,28,1.94,88,4845.75
+Mauricio Lima,54,1968,BRAZIL,MALE,29,1.84,81,4834.4
+Andrea Gardini,56,1965,ITALY,MALE,30,2.02,78,4813.4
+Gustavo Endres,47,1975,BRAZIL,MALE,31,2.03,96,4786.05
+Sergey Grankin,37,1985,RUSSIA,MALE,34,1.95,98,4666.35
+Luca Cantagalli,56,1965,ITALY,MALE,32,1.99,84,4691.95
+Dmitriy Fomin,54,1968,RUSSIA,MALE,33,2,94,4685.15
+Luigi Mastrangelo,47,1975,ITALY,MALE,35,2.03,90,4639.8
+Matthew Anderson,35,1987,USA,MALE,37,2.08,86,4604.19
+Lucas Saatkamp,36,1986,BRAZIL,MALE,36,2.09,101,4619.05
+Marko Podraščanin,35,1987,SERBIA,MALE,40,2.03,92,4521.8
+Ricardo Lucarelli,30,1992,BRAZIL,MALE,38,1.96,90,4591
+Marco Bracci,56,1966,ITALY,MALE,39,1.97,NOT FOUND,4560.1
+Aleksandar Atanasijević,31,1991,SERBIA,MALE,41,2,92,4474.59
+Georg Grozer,37,1984,GERMANY,MALE,42,2.01,104,4375.26
+Alexander Volkov,33,1988,RUSSIA,MALE,44,2.1,95,4313.85
+Aleksey Kuleshov,43,1979,RUSSIA,MALE,43,2.06,96,4336.05
+Valerio Vermiglio,46,1976,ITALY,MALE,45,1.89,82,4206.35
+Paweł Zatorski,32,1990,POLAND,MALE,47,1.83,72,4174.05
+Raphael Vieira de Oliveira,43,1979,BRAZIL,MALE,46,1.9,86,4184.1
+Hubert Henno,45,1976,FRANCE,MALE,50,1.88,92,4068.8
+Nalbert Bitencourt,48,1974,BRAZIL,MALE,48,1.96,91,4150.45
+Alexander Butko,36,1986,RUSSIA,MALE,51,1.98,97,4053.65
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,Brazil,,,
