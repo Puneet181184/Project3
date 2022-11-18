@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 {% extends "horseracing_app/base.html" %}
 {% block body_block %}
-<h1>This page has the age  details for all players.</h1>
+<h1>This page has the horse and starts  details for all players.</h1>
 
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
 <div class="container">
 <ul class="nav navbar-nav">		
-<li> <a class="navbar-link" href={% url "horseracing_app:player" %}>Go back to list</a></li>
+<li> <a class="navbar-link" href={% url "horseracing_app:details" %}>Go back to list</a></li>
 </ul>
 </div>
 </nav>
 <table>
-<caption>Playerinfo</caption>
+<caption>Detailsinfo</caption>
 <tr>
 <th>Name</th>
-<th>Age</th>
+<th>Horse</th>
+<th>Starts</th>
 </tr>
 {% if player %}
 {% for entry in player %}
 <tr>
 <td>{{ entry.name }}</td>
-<td>{{ entry.age }}</td>
+<td>{{ entry.horse }}</td>
+<td>{{ entry.starts }}</td>
 </tr>
 {% endfor %}
 {% endif %}
