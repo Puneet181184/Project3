@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 {% extends "horseracing_app/base.html" %}
 {% block body_block %}
-<h1>Player entry submitted successfully</h1>
+<h1>The player entry could not be found.</h1>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-
 <div class="container">
 <ul class="nav navbar-nav">
 <li> <a class="navbar-link" href={% url "horseracing_app:form_pointstats" %}>Enter new entry</a></li>
@@ -13,3 +12,4 @@
 </div>
 </nav> 	
 {% endblock %}
+ 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends "horseracing_app/base.html" %}
 {% block body_block %}
-<h1>Player entry submitted successfully</h1>
+<h1>Please provide the player name to search the details.</h1>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
 
 <div class="container">
@@ -12,4 +12,12 @@
 </ul>
 </div>
 </nav> 	
+<div class="container-fluid">
+<form method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<input type="submit" class="btn btn-primary" value="submit">	
+</form>
+</div>
+
 {% endblock %}
