@@ -15,7 +15,7 @@ class detailsform(forms.ModelForm):
          fields=["name","horse","starts"]   
 class pointstatsform(forms.ModelForm):
       class Meta():
-         model=archery_db
+         model=horseracing_db
          fields=["name","gold","silver","bronze"] 
 class searchform(forms.ModelForm):
       class Meta():
