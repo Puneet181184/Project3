@@ -35,3 +35,44 @@ def form_player(request):
       else:
          print("error form invalid")      
     return render(request,"swimming_app/form_player.html",{"form":form})         
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         rank=form.cleaned_data["rank"]
+         defaults={"rank":rank}
+         obj,created=swimming_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"swimming_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"swimming_app/form_about.html",{"form":form})   
+def form_details(request):
+    form=detailsform()
+    if request.method=="POST":
+      form=detailsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         medals=form.cleaned_data["medals"]
+         defaults={"medals":medals}
+         obj,created=swimming_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"swimming_app/submit_medals.html")
+      else:
+         print("error form invalid")      
+    return render(request,"swimming_app/form_medals.html",{"form":form})   
+def form_pointstats(request):
+    form=pointstatsform()
+    if request.method=="POST":
+      form=pointstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         gold=form.cleaned_data["gold"]
+         silver=form.cleaned_data["silver"]
+         bronze=form.cleaned_data["bronze"]
+         defaults={"gold":gold,"silver":silver,"bronze":bronze}
+         obj,created=swimming_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"swimming_app/submit_pointstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"swimming_app/form_pointstats.html",{"form":form})                                 

@@ -7,29 +7,17 @@ class playerform(forms.ModelForm):
          fields=["name","age","country"]
 class aboutform(forms.ModelForm):
       class Meta():
-         model=basketball_db
-         fields=["name","college","position"] 
+         model=swimming_db
+         fields=["name","rank"] 
 class detailsform(forms.ModelForm):
       class Meta():
-         model=basketball_db
-         fields=["name","height","weight","preferedhand"] 
-class gamestatsform(forms.ModelForm):
-      class Meta():
-         model=basketball_db
-         fields=["name","games","gamestarted","minutes"]  
-class goalstatsform(forms.ModelForm):
-      class Meta():
-         model=basketball_db
-         fields=["name","goals","attempts","assists","steals"] 
+         model=swimming_db
+         fields=["name","medals"] 
 class pointstatsform(forms.ModelForm):
       class Meta():
-         model=basketball_db
-         fields=["name","points","threepoints","twopoints"] 
-class blockstatsform(forms.ModelForm):
-      class Meta():
-         model=basketball_db
-         fields=["name","blocks","freethrows","rebounds","fouls"] 
+         model=swimming_db
+         fields=["name","gold","silver","bronze"]   
 class searchform(forms.ModelForm):
       class Meta():
-         model=basketball_db
+         model=swimming_db
          fields=["name"]                  
