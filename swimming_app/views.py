@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from swimming_app.models import swimming_db
 from swimming_app.forms import playerform
-
+from swimming_app.forms import aboutform
+from swimming_app.forms import detailsform
+from swimming_app.forms import pointstatsform
+from swimming_app.forms import searchform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"swimming_app/home.html")
@@ -75,4 +78,18 @@ def form_pointstats(request):
          return render(request,"swimming_app/submit_pointstats.html")
       else:
          print("error form invalid")      
-    return render(request,"swimming_app/form_pointstats.html",{"form":form})                                 
+    return render(request,"swimming_app/form_pointstats.html",{"form":form}) 
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=swimming_db.objects.get(name__iexact=name) 
+         except karate_db.DoesNotExist:
+             return render(request,"swimming_app/error_player.html")
+         return render(request,"swimming_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"swimming_app/search_player.html",{"form":form})                                    
