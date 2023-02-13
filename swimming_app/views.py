@@ -60,10 +60,10 @@ def form_details(request):
          medals=form.cleaned_data["medals"]
          defaults={"medals":medals}
          obj,created=swimming_db.objects.update_or_create(name=name,defaults=defaults)
-         return render(request,"swimming_app/submit_medals.html")
+         return render(request,"swimming_app/submit_details.html")
       else:
          print("error form invalid")      
-    return render(request,"swimming_app/form_medals.html",{"form":form})   
+    return render(request,"swimming_app/form_details.html",{"form":form})   
 def form_pointstats(request):
     form=pointstatsform()
     if request.method=="POST":
