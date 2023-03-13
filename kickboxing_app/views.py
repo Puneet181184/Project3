@@ -34,4 +34,35 @@ def form_player(request):
       else:
          print("error form invalid")      
     return render(request,"kickboxing_app/form_player.html",{"form":form})       		    		    		
+def form_about(request):
+    form=aboutform()
+    if request.method=="POST":
+      form=aboutform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         height=form.cleaned_data["height"]
+         weight=form.cleaned_data["weight"]
+         defaults={"height":height,"weight":weight}
+         obj,created=kickboxing_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"kickboxing_app/submit_about.html")
+      else:
+         print("error form invalid")      
+    return render(request,"kickboxing_app/form_about.html",{"form":form})  
+def form_pointstats(request):
+    form=pointstatsform()
+    if request.method=="POST":
+      form=pointstatsform(request.POST)
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         wins=form.cleaned_data["wins"]
+         losses=form.cleaned_data["losses"]
+         defaults={"wins":wins,"losses":losses}
+         obj,created=kickboxing_db.objects.update_or_create(name=name,defaults=defaults)
+         return render(request,"kickboxing_app/submit_pointstats.html")
+      else:
+         print("error form invalid")      
+    return render(request,"kickboxing_app/form_pointstats.html",{"form":form})                                      
+
+
+
 
