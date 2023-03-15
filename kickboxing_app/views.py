@@ -62,7 +62,20 @@ def form_pointstats(request):
       else:
          print("error form invalid")      
     return render(request,"kickboxing_app/form_pointstats.html",{"form":form})                                      
-
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=kickboxing_db.objects.get(name__iexact=name) 
+         except karate_db.DoesNotExist:
+             return render(request,"kickboxing_app/error_player.html")
+         return render(request,"kickboxing_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"kickboxing_app/search_player.html",{"form":form})
 
 
 
