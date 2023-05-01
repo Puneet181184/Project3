@@ -11,7 +11,7 @@ class aboutform(forms.ModelForm):
          fields=["name","height","weight"]  
 class pointstatsform(forms.ModelForm):
       class Meta():
-         model=archery_db
+         model=rockclimbing_db
          fields=["name","rankingboulder","rankinglead"] 
 class searchform(forms.ModelForm):
       class Meta():
