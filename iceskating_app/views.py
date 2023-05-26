@@ -12,4 +12,11 @@ def player(request):
     players_list=iceskating_db.objects.order_by("name")
     iceskating_dict={"player":players_list}
     return render(request,"iceskating_app/player.html",context=iceskating_dict)			
-
+def about(request):
+    players_list=iceskating_db.objects.order_by("name")
+    iceskating_dict={"player":players_list}
+    return render(request,"iceskating_app/about.html",context=iceskating_dict)			
+def details(request):
+    players_list=iceskating_db.objects.order_by("name")
+    iceskating_dict={"player":players_list}
+    return render(request,"iceskating_app/details.html",context=iceskating_dict)			
