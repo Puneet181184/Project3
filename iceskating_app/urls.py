@@ -7,4 +7,6 @@ urlpatterns=[
   re_path(r'player/',views.player,name='player'),
   re_path(r'about/',views.about,name='about'),
   re_path(r'details/',views.details,name='details'),
+  re_path(r'form_p/',views.form_player,name='form_player'),
+
   ]
