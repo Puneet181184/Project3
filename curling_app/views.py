@@ -8,3 +8,7 @@ from curling_app.forms import searchform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"curling_app/home.html")
+def player(request):
+    players_list=curling_db.objects.order_by("name")
+    curling_dict={"player":players_list}
+    return render(request,"curling_app/player.html",context=curling_dict)
