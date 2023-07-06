@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from curling_app.models import curling_db
+admin.site.register(curling_db)
