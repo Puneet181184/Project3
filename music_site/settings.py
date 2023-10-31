@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'curling_app',
     'lacrosse_app',
     'rowing_app',
+    'polo_app',
 ]
 
 MIDDLEWARE = [
