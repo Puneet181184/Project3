@@ -54,5 +54,6 @@ urlpatterns = [
     path("rowing_app",include("rowing_app.urls")),
     path("polo_app",include("polo_app.urls")),
     path("handball_app",include("handball_app.urls")),
+    path("boxing_app",include("boxing_app.urls")),
     
 ]
