@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends "boxing_app/base.html" %}
+{% block body_block %}
+<h1>This page has the points details for all players.</h1>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">	
+<li> <a class="navbar-link" href={% url "boxing_app:form_pointstats" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "boxing_app:search_pointstats" %}>Search an entry</a></li>		
+<li> <a class="navbar-link" href={% url "boxing_app:pointstats" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Pointstatsinfo</caption>
+<tr>
+<th>Name</th>
+<th>Wins</th>
+<th>Losses</th>
+<th>Draws</th>
+</tr>
+{% if player %}
+{% for entry in player %}
+<tr>
+<td>{{ entry.name }}</td>
+<td>{{ entry.wins }}</td>
+<td>{{ entry.losses }}</td>
+<td>{{ entry.draws }}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}
