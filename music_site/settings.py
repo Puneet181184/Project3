@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     'polo_app',
     'handball_app',
     'boxing_app',
+    'skiing',
 ]
 
 MIDDLEWARE = [
