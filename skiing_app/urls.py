@@ -5,4 +5,6 @@ app_name="skiing_app"
 urlpatterns=[
   re_path(r'home/',views.home,name='home'),
   re_path(r'player/',views.player,name='player'),
+  re_path(r'about/',views.about,name='about'),
+  
   ]

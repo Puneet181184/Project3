@@ -11,4 +11,7 @@ def player(request):
     players_list=skiing_db.objects.order_by("name")
     skiing_dict={"player":players_list}
     return render(request,"skiing_app/player.html",context=skiing_dict)		
-
+def about(request):
+    players_list=skiing_db.objects.order_by("name")
+    skiing_dict={"player":players_list}
+    return render(request,"skiing_app/about.html",context=skiing_dict)     
