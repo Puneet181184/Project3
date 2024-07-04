@@ -44,3 +44,31 @@ def form_about(request):
       else:
          print("error form invalid")      
     return render(request,"skating_app/form_about.html",{"form":form})    
+def search_player(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=skating_db.objects.get(name__iexact=name) 
+         except skating_db.DoesNotExist:
+             return render(request,"skating_app/error_player.html")
+         return render(request,"skating_app/result_player.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"skating_app/search_player.html",{"form":form})
+def search_about(request):
+    form=searchform()
+    if request.method=="POST":
+      form=searchform(request.POST) 
+      if form.is_valid():
+         name=form.cleaned_data["name"]
+         try:
+             my_value=skating_db.objects.get(name__iexact=name) 
+         except karate_db.DoesNotExist:
+             return render(request,"skating_app/error_about.html")
+         return render(request,"skating_app/result_about.html",context={"player":my_value})
+      else:
+         print(" error form invalid")
+    return render(request,"skating_app/search_about.html",{"form":form})     
