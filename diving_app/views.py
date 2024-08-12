@@ -7,3 +7,11 @@ from diving_app.forms import searchform
 def home(request):
 	#return HttpResponse("Hello World!")
 	return render(request,"diving_app/home.html")
+def player(request):
+    players_list=diving_db.objects.order_by("name")
+    diving_dict={"player":players_list}
+    return render(request,"diving_app/player.html",context=diving_dict)		
+def about(request):
+    players_list=diving_db.objects.order_by("name")
+    diving_dict={"player":players_list}
+    return render(request,"diving_app/about.html",context=diving_dict)	
