@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'skiing_app',
     'skating_app',
     'diving_app',
+    'hockey_app',
 ]
 
 MIDDLEWARE = [
