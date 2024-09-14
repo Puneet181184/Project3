@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from hockey_app.models import hockey_db
+admin.site.register(hockey_db)
