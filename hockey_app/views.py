@@ -43,7 +43,7 @@ def form_about(request):
          return render(request,"hockey_app/submit_about.html")
       else:
          print("error form invalid")      
-    return render(request,"hocckey_app/form_about.html",{"form":form})                     
+    return render(request,"hockey_app/form_about.html",{"form":form})                     
 def search_player(request):
     form=searchform()
     if request.method=="POST":
@@ -54,7 +54,7 @@ def search_player(request):
              my_value=hockey_db.objects.get(name__iexact=name) 
          except hocckey_db.DoesNotExist:
              return render(request,"hockey_app/error_player.html")
-         return render(request,"hocckey_app/result_player.html",context={"player":my_value})
+         return render(request,"hockey_app/result_player.html",context={"player":my_value})
       else:
          print(" error form invalid")
     return render(request,"hockey_app/search_player.html",{"form":form})
