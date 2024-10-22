@@ -10,11 +10,11 @@ def home(request):
 def player(request):
     players_list=triathlon_db.objects.order_by("name")
     triathlon_dict={"player":players_list}
-    return render(request,"triathlon_app/player.html",context=tennis_dict)		
+    return render(request,"triathlon_app/player.html",context=triathlon_dict)		
 def about(request):
     players_list=triathlon_db.objects.order_by("name")
     triathlon_dict={"player":players_list}
-    return render(request,"triathlon_app/about.html",context=tennis_dict)	
+    return render(request,"triathlon_app/about.html",context=triathlon_dict)	
 def form_player(request):
     form=playerform()
     if request.method=="POST":
@@ -23,7 +23,7 @@ def form_player(request):
          name=form.cleaned_data["name"]
          dob=form.cleaned_data["dob"]
          country=form.cleaned_data["country"]
-         defaults={"dob":dob,"country"country}
+         defaults={"dob":dob,"country":country}
          obj,created=triathlon_db.objects.update_or_create(name=name,defaults=defaults)
          return render(request,"triathlon_app/submit_player.html")
       else:
