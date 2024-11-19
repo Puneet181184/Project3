@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "biathlon_app/base.html" %}
+{% block body_block %}
+<h1>Please find the details for the requested player entry.</h1>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<div class="container">
+<ul class="nav navbar-nav">
+<li> <a class="navbar-link" href={% url "biathlon_app:form_about" %}>Enter new entry</a></li>
+<li> <a class="navbar-link" href={% url "biathlon_app:search_about" %}>Search an entry</a></li>
+<li> <a class="navbar-link" href={% url "biathlon_app:about" %}>Go back to list</a></li>
+</ul>
+</div>
+</nav>
+<table>
+<caption>Aboutinfo</caption>
+<tr>
+<th>Name</th>
+<th>Gender</th>
+<th>Rank</th>
+<th>Points</th>
+</tr>
+{% if player %}
+<tr>
+<td>{{ player.name }}</td>
+<td>{{ player.gender }}</td>
+<td>{{ player.rank }}</td>
+<td>{{ player.points }}</td>
+</tr>
+{% endif %}
+</table> 	
+{% endblock %}
