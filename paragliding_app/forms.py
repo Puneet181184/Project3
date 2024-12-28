@@ -8,7 +8,7 @@ class playerform(forms.ModelForm):
 class aboutform(forms.ModelForm):
       class Meta():
          model=paragliding_db
-         fields=["name","id","gender"] 
+         fields=["name","playerid","gender"] 
 class searchform(forms.ModelForm):
       class Meta():
          model=paragliding_db

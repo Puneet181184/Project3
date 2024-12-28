@@ -16,14 +16,14 @@
 <caption>Aboutinfo</caption>
 <tr>
 <th>Name</th>
-<th>Id</th>
+<th>playerid</th>
 <th>Gender</th>
 </tr>
 {% if player %}
 {% for entry in player %}
 <tr>
 <td>{{ entry.name }}</td>
-<td>{{ entry.id }}</td>
+<td>{{ entry.playerid }}</td>
 <td>{{ entry.gender }}</td>
 </tr>
 {% endfor %}

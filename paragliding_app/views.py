@@ -35,9 +35,9 @@ def form_about(request):
       form=aboutform(request.POST)
       if form.is_valid():
          name=form.cleaned_data["name"]
-         Id=form.cleaned_data["Id"]
+         playerid=form.cleaned_data["playerid"]
          gender=form.cleaned_data["Gender"]
-         defaults={"id":Id,"gender":gender}
+         defaults={"playerid":playerid,"gender":gender}
          obj,created=_db.objects.update_or_create(name=name,defaults=defaults)
          return render(request,"paragliding_app/submit_about.html")
       else:
